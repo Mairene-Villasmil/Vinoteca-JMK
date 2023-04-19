@@ -1,0 +1,26 @@
+.imagenCarrusel {
+    align-items: center;
+    background-color: black;
+    background-size: 0.25rem;
+    display: flex;
+    height: 45vh;
+    justify-content: center;
+}
+
+.marquee {
+    display: flex;
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 25%, black 75%, rgba(0, 0, 0, 0) 100%);
+    width: 70vw;
+    user-select: none;
+    overflow: hidden;
+}
+
+.slide {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-evenly;
+    min-width: 100%;
+    animation: 50s linear 0s infinite normal none running slide-x;
+}
+

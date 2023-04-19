@@ -1,0 +1,120 @@
+.formApp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 70%;
+}
+
+.form h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    margin: 20px 0px 40px;
+}
+
+.formulario_dos {
+    width: 80%;
+    font-weight: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="documento"], textarea {
+    width: 100%;
+    height: 25px;
+    display: block;
+    color: rgb(0, 0, 0);
+    border-top-width: initial;
+    border-right-width: initial;
+    border-left-width: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: white;
+    resize: none;
+    outline: none;
+    padding: 7px;
+    border-style: none none solid;
+    border-image: initial;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+button[type="submit"] {
+    display: block;
+    font-size: 18px;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(44, 2, 2, 0.933);
+    color: white;
+    font-weight: bolder;
+    margin: 20px 0px 0px 10px;
+    border-radius: 10px;
+}
+
+.app {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app img {
+    width: 150px;
+    height: 150px;
+    margin: 30px 0px;
+}
+
+.sucursalM {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mapa aside {
+    width: 50%;
+    margin-left: 30px;
+}
+
+.sucursal {
+    width: 50%;
+    height: 300px;
+}
+
+.sucursal h1 {
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.sucursal ul {
+    list-style-type: none;
+    line-height: 35px;
+    font-weight: bolder;
+    font-size: 18px;
+}

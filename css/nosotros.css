@@ -1,0 +1,71 @@
+.dos section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dos h1 {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.nosotros {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.galeria {
+    width: 50%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.imagen-n {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
+
+.imagen-n img {
+    width: 350px;
+    height: 250px;
+}
+
+.video-n {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 380px;
+    height: 250px;
+    overflow: hidden;
+}
+
+.video-n img {
+    width: 480px;
+    height: 250px;
+}
+
+.texto-n {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 600px;
+}
+
+.texto-n p {
+    font-size: 30px;
+    text-align: justify;
+    padding-right: 35px;
+}

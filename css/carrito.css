@@ -1,0 +1,67 @@
+.siete section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.carrito {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subtotal {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.costo h1{
+    width: 100%;
+    margin: 20px 0px 0px 120px;
+    text-align: right;
+    text-decoration-line: overline;
+}
+
+.pagar {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-c {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tarjeta-c img {
+    width: 140px;
+    height: 100px;
+}
+
+.total h1{
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.datosTDC{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

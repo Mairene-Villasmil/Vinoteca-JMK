@@ -1,0 +1,121 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.navegacion {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagen {
+    width: 30%;
+    margin: 0px 10px;
+}
+
+.imagen img {
+    width: 280px;
+    height: 10vh;
+}
+
+.botones a {
+    text-decoration-line: none;
+    font-size: 16px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    padding: 10px;
+    margin: 0px 10px;
+}
+
+.botones i {
+    font-size: 30px;
+}
+
+.login {
+    margin-right: 10px;
+}
+
+.login i {
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    padding: 5px;
+}
+
+.search {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+#inputSearch {
+    width: 400px;
+    height: 30px;
+}
+
+.whatsapp {
+    position: fixed;
+    right: 1%;
+    bottom: 10%;
+    z-index: 100;
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+.iconos ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.iconos li i {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.copy p {
+    font-size: 10px;
+    color: white;
+    margin-right: 15px;
+}
+
