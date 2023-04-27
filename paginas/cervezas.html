@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/productos.css">
 
-    <title>PRACTICANDO JS</title>
+    <title>JMK CERVEZAS</title>
 </head>
 
 <body>
@@ -20,38 +20,60 @@
         <nav>
             <div class="navegacion">
                 <div class="imagen">
-                    <img src="../imagenes/Screenshot 2023-04-04 13.45.26.png" alt="LOGO">
+                    <a href="../index.html"><img src="../imagenes/logo.png" alt="LOGO"></a>
                 </div>
                 <div class="botones">
-                    <a href="#" class="nav-bar" id="inicio">INICIO</a>
-                    <a href="#" class="nav-bar" id="nosotros">NOSOTROS</a>
-                    <a href="#" class="nav-bar" id="productos">PRODUCTOS</a>
-                    <a href="#" class="nav-bar" id="eventos">EVENTOS</a>
-                    <a href="#" class="nav-bar" id="contactanos">CONTACTOS</a>
-                    <a href="#" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <ul>
+                        <li><a href="../index.html" class="nav-bar" id="inicio">INICIO</a></li>
+                        <li><a href="../paginas/nosotros.html" class="nav-bar" id="nosotros">NOSOTROS</a></li>
+                        <li><a href="#" class="nav-bar prod" id="productos">PRODUCTOS</a>
+                            <ul class="menuD">
+                                <li><a href="#">VINOS</a></li>
+                                <li><a href="../paginas/whiskys.html">WHISKYS</a></li>
+                                <li><a href="../paginas/cervezas.html">CERVEZAS</a></li>
+                                <li><a href="../paginas/giftcard.html">GIFT CARD</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-bar even" id="eventos">EVENTOS</a>
+                            <ul class="menuD">
+                                <li><a href="../paginas/eventos.html">EVENTOS</a></li>
+                                <li><a href="../paginas/recorridos.html">RECORRIDOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../paginas/contactanos.html" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
+                        <li><a href="../paginas/carrito.html" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
                 </div>
                 <div class="login">
-                    <p class="nav-bar" id="socio"><i class="fa-solid fa-user"></i></p>
+                    <a href="#" class="nav-bar" id="socio"><i class="fa-solid fa-user"></i>
+                    <ul class="menuD">
+                        <li><a href="../paginas/socio.html"></a>HACERSE SOCIO</li>
+                        <li>INICIAR SESIÓN</li>
+                    </ul>
+                    </a>
                 </div>
             </div>
             <div class="search">
-                <input type="text" id="inputSearch" placeholder="Busqueda">
+                <input type="search" id="inputSearch" placeholder="Busqueda">
             </div>
         </nav>
     </header>
     <main id="principal">
+        <section class="whatsapp">
+            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
+        </section>
         <div class="bloque tres" id="tres">
             <section class="imagenCarrusel">
                 <div class="marquee">
                     <div class="slide">
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/carruselTinto.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/carruselTinto1.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/cuvee.png" alt=""></a>
                     </div>
                     <div class="slide">
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                        <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/9.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/emiaRandana.png" alt=""></a>
+                        <a href="../paginas/carrito.html"><img src="../imagenes/zohe.png" alt=""></a>
                     </div>
                 </div>
             </section>
@@ -59,139 +81,152 @@
             <div class="filtro">
                 <label for="filtroB">Filtrar por:</label>
                 <select name="bebidasNombres" id="filtroB">
+                    <option value=""></option>
                     <option value="especial">Especiales</option>
                     <option value="tinto">Tintos</option>
                     <option value="blanco">Blancos</option>
                     <option value="rosados">Rosados</option>
                     <option value="espumantes">Espumantes</option>
-                    <option value="combos">Combos</option>
                 </select>
             </div>
         </section>
-        <section class="whatsapp">
-            <a href=""><img src="../imagenes/pngwing.com (1).png" alt=""></a>
-        </section>
             <section>
+                <h1>CERVEZA</h1>
                 <div class="cards">
                     <div class="card">
-                        <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                        <img src="../imagenes/deuxbonheur.png" alt="">
+                        <p>DEUX BONHEUR</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                            <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 8.200</p>
+                            <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/lamaf1.png" alt="">
+                        <p>LAMAF</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 6.500</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/RAME1.png" alt="">
+                        <p>RAMÉ</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 9.200</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/frenesi1.png" alt="">
+                        <p>FRENESÍ</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 6.800</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/SERC1.png" alt="">
+                        <p>SERC</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 11.000</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/cuveeRoyale.png" alt="">
+                        <p>CUVÉE ROYAL ROUGE</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 10.500</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/GrandeurNoir1.png" alt="">
+                        <p>GRANDEUR NOIR</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 9.400</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/domaineGrandeur.png" alt="">
+                        <p>DOMAINE GRANDEUR</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 13.600</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/SignatureRouge1.png" alt="">
+                        <p>SIGNATURE ROUGE</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 15.500</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/Sweet1.png" alt="">
+                        <p>SWEET</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 17.300</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/grow1.png" alt="">
+                        <p>GROW</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 8.900</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/breeze.png" alt="">
+                        <p>BREEZE</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 18.500</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/spring.png" alt="">
+                        <p>SPRING</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 19.400</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/soul1.png" alt="">
+                        <p>SOUL</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 8.600</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                     <div class="card">
-                    <img src="../imagenes/botellasPrueba.png" alt="">
-                        <p>NOMBRE DEL PRODUCTO</p>
+                    <img src="../imagenes/VintageRouge1.png" alt="">
+                        <p>VINTAGE ROUGE</p>
                         <div class="detalles">
-                            <p>$$$</p>
-                        <a href="../paginas/detalles.html"><button>DETALLES</button></a>
+                            <p>$ 22.500</p>
+                        <a href="../paginas/detalles.html">Detalles</a>
                         </div>
+                        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
                     </div>
                 </div>
             </section>

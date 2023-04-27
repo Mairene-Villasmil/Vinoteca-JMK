@@ -4,11 +4,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin: 50px 0px;
 }
 
 .ocho section h1 {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bolder;
     text-align: center;
     margin: 20px 0px 40px;
@@ -29,10 +29,26 @@
     align-items: center;
 }
 
+.gCard p{
+    font-size: 22px;
+}
+
 .giftCard img {
     width: 300px;
     height: 200px;
-    border-radius: 20px;
     margin: 20px;
 }
 
+button {
+    text-decoration-line: none;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bolder;
+    margin: 10px 0px;
+    color: black;
+    padding: 8px;
+}
+
+button:hover{
+    background-color: rgba(83, 139, 136, 0.822);
+}

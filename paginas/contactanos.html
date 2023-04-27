@@ -11,7 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/contactanos.css">
-        <title>PRACTICANDO JS</title>
+        <title>JMK CONTACTANOS</title>
 </head>
 
 <body>
@@ -19,28 +19,47 @@
         <nav>
             <div class="navegacion">
                 <div class="imagen">
-                    <img src="../imagenes/Screenshot 2023-04-04 13.45.26.png" alt="LOGO">
+                    <a href="../index.html"><img src="../imagenes/logo.png" alt="LOGO"></a>
                 </div>
                 <div class="botones">
-                    <a href="#" class="nav-bar" id="inicio">INICIO</a>
-                    <a href="#" class="nav-bar" id="nosotros">NOSOTROS</a>
-                    <a href="#" class="nav-bar" id="productos">PRODUCTOS</a>
-                    <a href="#" class="nav-bar" id="eventos">EVENTOS</a>
-                    <a href="#" class="nav-bar" id="contactanos">CONTACTOS</a>
-                    <a href="#" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <ul>
+                        <li><a href="../index.html" class="nav-bar" id="inicio">INICIO</a></li>
+                        <li><a href="../paginas/nosotros.html" class="nav-bar" id="nosotros">NOSOTROS</a></li>
+                        <li><a href="#" class="nav-bar prod" id="productos">PRODUCTOS</a>
+                            <ul class="menuD">
+                                <li><a href="../paginas/vinos.html">VINOS</a></li>
+                                <li><a href="../paginas/whiskys.html">WHISKYS</a></li>
+                                <li><a href="../paginas/cervezas.html">CERVEZAS</a></li>
+                                <li><a href="../paginas/giftcard.html">GIFT CARD</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-bar even" id="eventos">EVENTOS</a>
+                            <ul class="menuD">
+                                <li><a href="../paginas/eventos.html">EVENTOS</a></li>
+                                <li><a href="../paginas/recorridos.html">RECORRIDOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
+                        <li><a href="../paginas/carrito.html" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
                 </div>
                 <div class="login">
-                    <p class="nav-bar" id="socio"><i class="fa-solid fa-user"></i></p>
+                    <a href="#" class="nav-bar" id="socio"><i class="fa-solid fa-user"></i>
+                    <ul class="menuD">
+                        <li><a href="../paginas/socio.html"></a>HACERSE SOCIO</li>
+                        <li>INICIAR SESIÓN</li>
+                    </ul>
+                    </a>
                 </div>
             </div>
             <div class="search">
-                <input type="text" id="inputSearch" placeholder="Busqueda">
+                <input type="search" id="inputSearch" placeholder="Busqueda">
             </div>
         </nav>
     </header>
     <main id="principal">
         <section class="whatsapp">
-            <a href=""><img src="../imagenes/pngwing.com (1).png" alt=""></a>
+            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
         </section>
         <div class="bloque-nueve" id="nueve">
             <section>

@@ -65,3 +65,50 @@
     justify-content: center;
     align-items: center;
 }
+
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="documento"], textarea , input[type="number"]{
+    width: 100%;
+    height: 25px;
+    display: block;
+    color: rgb(0, 0, 0);
+    border-top-width: initial;
+    border-right-width: initial;
+    border-left-width: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-left-color: initial;
+    margin-bottom: 10px;
+    font-size: 18px;
+    background-color: white;
+    resize: none;
+    outline: none;
+    padding: 7px;
+    border-style: none none solid;
+    border-image: initial;
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+button {
+    width: 100px;
+    background-color: transparent;
+    color: black;
+    font-size: 18px;
+    padding: 8px;
+}
+
+button:hover{
+    background-color: rgba(83, 139, 136, 0.822);
+}
+
+.eresSocio{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 25px;
+    margin-top: 50px;
+}
+
+.eresSocio input{
+    width: 20%;
+}

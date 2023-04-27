@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/inicio.css">
 
-    <title>PRACTICANDO JS</title>
+    <title>JMK</title>
 </head>
 
 <body>
@@ -20,45 +20,86 @@
         <nav>
             <div class="navegacion">
                 <div class="imagen">
-                    <img src="../imagenes/Screenshot 2023-04-04 13.45.26.png" alt="LOGO">
+                    <img src="./imagenes/logo.png" alt="LOGO">
                 </div>
                 <div class="botones">
-                    <a href="#" class="nav-bar" id="inicio">INICIO</a>
-                    <a href="#" class="nav-bar" id="nosotros">NOSOTROS</a>
-                    <a href="#" class="nav-bar" id="productos">PRODUCTOS</a>
-                    <a href="#" class="nav-bar" id="eventos">EVENTOS</a>
-                    <a href="#" class="nav-bar" id="contactanos">CONTACTOS</a>
-                    <a href="#" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <ul>
+                        <li><a href="#" class="nav-bar" id="inicio">INICIO</a></li>
+                        <li><a href="./paginas/nosotros.html" class="nav-bar" id="nosotros">NOSOTROS</a></li>
+                        <li><a href="#" class="nav-bar prod" id="productos">PRODUCTOS</a>
+                            <ul class="menuD">
+                                <li><a href="./paginas/vinos.html">VINOS</a></li>
+                                <li><a href="./paginas/whiskys.html">WHISKYS</a></li>
+                                <li><a href="./paginas/cervezas.html">CERVEZAS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-bar even" id="eventos">EVENTOS</a>
+                            <ul class="menuD">
+                                <li><a href="./paginas/eventos.html">EVENTOS</a></li>
+                                <li><a href="./paginas/recorridos.html">RECORRIDOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./paginas/contactanos.html" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
+                        <li><a href="./paginas/carrito.html" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
                 </div>
                 <div class="login">
-                    <p class="nav-bar" id="socio"><i class="fa-solid fa-user"></i></p>
+                    <a href="#" class="nav-bar" id="socio"><i class="fa-solid fa-user"></i>
+                    <ul class="menuD">
+                        <li><a href="./paginas/socio.html"></a>HACERSE SOCIO</li>
+                        <li>INICIAR SESIÓN</li>
+                    </ul>
+                    </a>
                 </div>
             </div>
             <div class="search">
-                <input type="text" id="inputSearch" placeholder="Busqueda">
+                <input type="search" id="inputSearch" placeholder="Busqueda">
             </div>
         </nav>
     </header>
     <main id="principal">
+        <section class="whatsapp">
+            <a href=""><img src="./imagenes/whatsapp.png" alt=""></a>
+        </section>
         <section class="imagenCarrusel">
             <div class="marquee">
                 <div class="slide">
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
+                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselFiesta.png" alt=""></a>
+                    <a href="./paginas/cervezas.html"><img src="./imagenes/carruselCerveza.png" alt=""></a>
+                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselRosado.png" alt=""></a>
+                    <a href="./paginas/whiskys.html"><img src="./imagenes/carruselWhisky.png" alt=""></a>
+                    <a href="./paginas/recorridos.html"><img src="./imagenes/carruselRecorrido.png" alt=""></a>
                 </div>
                 <div class="slide">
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
-                    <a href="../paginas/carrito.html"><img src="../imagenes/botellasPrueba.png" alt=""></a>
+                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselVinos.png" alt=""></a>
+                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselDiez.png" alt=""></a>
+                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselCata.png" alt=""></a>
+                    <a href="./paginas/cervezas.html"><img src="./imagenes/carruselCerveza.png" alt=""></a>
+                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselEspumante2.png" alt=""></a>
                 </div>
             </div>
         </section>
         <section>
             <div class="cards">
                 <div class="card">
-                    <img src="../imagenes/evento.jpeg" alt="">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaUno.png" alt=""></a>
                 </div>
+                <div class="card">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaDos.png" alt=""></a>
+                </div>
+                <div class="card">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaTres.png" alt=""></a>
+                </div>
+                <div class="card">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaCuatro.png" alt=""></a>
+                </div>
+                <div class="card">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaCinco.png" alt=""></a>
+                </div>
+                <div class="card">
+                    <a href="./paginas/carrito.html"><img src="./imagenes/ofertaSeis.png" alt=""></a>
+                </div>
+            </div>
             </div>
         </section>
 

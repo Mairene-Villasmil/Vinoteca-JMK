@@ -11,36 +11,60 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/socio.css">
-    <title>PRACTICANDO JS</title>
+    <title>JMK SOCIOS</title>
 </head>
 
 <body>
-    <header>
+    <header id="suscribirme">
         <nav>
             <div class="navegacion">
                 <div class="imagen">
-                    <img src="../imagenes/Screenshot 2023-04-04 13.45.26.png" alt="LOGO">
+                    <a href="../index.html"><img src="../imagenes/logo.png" alt="LOGO"></a>
                 </div>
                 <div class="botones">
-                    <a href="#" class="nav-bar" id="inicio">INICIO</a>
-                    <a href="#" class="nav-bar" id="nosotros">NOSOTROS</a>
-                    <a href="#" class="nav-bar" id="productos">PRODUCTOS</a>
-                    <a href="#" class="nav-bar" id="eventos">EVENTOS</a>
-                    <a href="#" class="nav-bar" id="contactanos">CONTACTOS</a>
-                    <a href="#" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <ul>
+                        <li><a href="../index.html" class="nav-bar" id="inicio">INICIO</a></li>
+                        <li><a href="../paginas/nosotros.html" class="nav-bar" id="nosotros">NOSOTROS</a></li>
+                        <li><a href="#" class="nav-bar prod" id="productos">PRODUCTOS</a>
+                            <ul class="menuD">
+                                <li><a href="../paginas/vinos.html">VINOS</a></li>
+                                <li><a href="../paginas/whiskys.html">WHISKYS</a></li>
+                                <li><a href="../paginas/cervezas.html">CERVEZAS</a></li>
+                                <li><a href="../paginas/giftcard.html">GIFT CARD</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="nav-bar even" id="eventos">EVENTOS</a>
+                            <ul class="menuD">
+                                <li><a href="../paginas/eventos.html">EVENTOS</a></li>
+                                <li><a href="../paginas/recorridos.html">RECORRIDOS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../paginas/contactanos.html" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
+                        <li><a href="../paginas/carrito.html" class="nav-bar" id="compras"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    </ul>
                 </div>
                 <div class="login">
-                    <p class="nav-bar" id="socio"><i class="fa-solid fa-user"></i></p>
+                    <a href="#" class="nav-bar" id="socio"><i class="fa-solid fa-user"></i>
+                    <ul class="menuD">
+                        <li><a href="#"></a>HACERSE SOCIO</li>
+                        <li>INICIAR SESIÓN</li>
+                    </ul>
+                    </a>
                 </div>
             </div>
             <div class="search">
-                <input type="text" id="inputSearch" placeholder="Busqueda">
+                <input type="search" id="inputSearch" placeholder="Busqueda">
             </div>
         </nav>
     </header>
     <main id="principal">
+            <div class="botones-form">
+                <a href="#comoFunciona"><button>Como Funciona</button></a>
+                <a href="#beneficios"><button>Beneficios</button></a>
+                <a href="#suscribirme"><button>Suscribirme</button></a>
+            </div>
         <section class="whatsapp">
-            <a href=""><img src="../imagenes/pngwing.com (1).png" alt=""></a>
+            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
         </section>
         <div class="bloque cuatro" id="cuatro">
             <section>
@@ -65,20 +89,15 @@
                             </div>
                         </form>
                     </div>
-                    <div class="img-form">
-                        <div class="botones-form">
-                            <button>Como Funciona</button>
-                            <button>Beneficios</button>
-                            <button>Suscribirme</button>
+                        <div class="imagenForm">
+                            <img src="../imagenes/socioUno.jpg" alt="">
                         </div>
-                        <img src="../imagenes/cata.jpg" alt="">
-                    </div>
                 </div>
             </section>
-            <section>
+            <section id="comoFunciona">
                 <div class="Funcion">
                     <div class="comoFunciona">
-                        <h1>Como Funciona</h1>
+                        <h1>COMO FUNCIONA</h1>
                         <ul>
                             <li>Suscribite a nuestro Club y disfrutá desde tu casa.</li><br>
                             <li>Recibí todos los meses una caja con vinos seleccionados y recomendados por expertos
@@ -87,17 +106,17 @@
                         </ul>
                     </div>
                     <div class="regalo">
-                        <img src="../imagenes/evento.jpeg" alt="">
+                        <img src="../imagenes/socioDos.jpg" alt="">
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="beneficios">
                 <div class="Funcion">
                     <div class="regalo-beneficio">
-                        <img src="../imagenes/helicp.jpg" alt="">
+                        <img src="../imagenes/socioTres.jpg" alt="">
                     </div>
                     <div class="beneficio">
-                        <h1>Beneficios</h1>
+                        <h1>BENEFICIOS</h1>
                         <ul>
                             <li>Descuentos exclusivos en nuestra tienda online.</li><br>
                             <li>Recibe recetas y maridajes sugeridos por nuestro exclusivo somelier para disfrutar mejor
