@@ -22,10 +22,6 @@
     align-items: center;
 }
 
-.detalle-producto {
-    width: 50%;
-}
-
 .img-product {
     width: 100%;
     display: flex;
@@ -41,6 +37,7 @@
 }
 
 .detalle-producto{
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,14 +45,15 @@
 }
 
 .detalles-producto {
-    width: 400px;
-    font-size: 20px;
+    width: 600px;
+    font-size: 18px;
     background-color: beige;
     margin-top: 25px;
     border-width: 2px;
     border-style: solid;
     border-color: black;
     border-image: initial;
+    line-height: 30px;
 }
 
 .detalles-producto ul {
