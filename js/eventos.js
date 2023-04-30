@@ -14,5 +14,6 @@ var dataEventos = {
     "description": "Romantica cena para dos, especial para celebraciones de aniversario, degustaran de exquisitos platos, bebidas y postres a la carta",
     "price": 25000,
 },
+
     ]
 }
