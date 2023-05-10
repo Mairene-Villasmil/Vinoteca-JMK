@@ -3,6 +3,12 @@
     padding: 0px;
 }
 
+/* body{
+    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/803/1006/desktop-wallpaper-white-leather-texture-white-texture.jpg);
+    background-size: 100vw 100%;
+    background-attachment: fixed;
+} */
+
 header {
     width: 100vw;
     height: 30vh;
@@ -10,7 +16,7 @@ header {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0),rgb(24, 22, 22));
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
 }
 
 nav {
@@ -57,18 +63,18 @@ nav {
     font-size: 25px;
 }
 
-.botones > li{
+.botones>li {
     float: left;
 }
 
 .botones li ul {
-    display:none;
-    position:absolute;
-    min-width:180px;
+    display: none;
+    position: absolute;
+    min-width: 180px;
 }
 
-.botones li:hover > ul {
-    display:block;
+.botones li:hover>ul {
+    display: block;
 }
 
 .menuD li {
@@ -96,30 +102,30 @@ nav {
     color: white;
     font-size: 30px;
     padding: 5px;
-    margin: 20px 20px 0px 0px;
+    margin-bottom: 10px;
 }
 
-.login ul{
+.login ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
 }
 
 .login li ul {
-    display:none;
-    position:absolute;
+    display: none;
+    position: absolute;
     min-width: 140px;
     font-weight: bolder;
 }
 
-.login li ul a{
+.login li ul a {
     color: white;
     font-weight: bolder;
     text-decoration-line: none;
 }
 
-.login li:hover > ul {
-    display:block;
+.login li:hover>ul {
+    display: block;
 }
 
 .search {
@@ -131,21 +137,27 @@ nav {
     margin: 30px 20px;
 }
 
-#inputSearch {
+#search {
     width: 400px;
     height: 30px;
     border-radius: 5px;
     margin-top: 8px;
 }
 
-.whatsapp {
+main {
+    width: 100%;
+    height: 45%;
+    min-height: 45vh
+}
+
+.whatsappB {
     position: fixed;
     right: 1%;
     bottom: 10%;
     z-index: 100;
 }
 
-.whatsapp img {
+.whatsappB img {
     width: 60px;
 }
 
@@ -156,29 +168,62 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(rgb(24, 22, 22), rgb(0, 0, 0), rgb(0, 0, 0));
+ /* background: linear-gradient(rgb(24, 22, 22), rgb(0, 0, 0), rgb(0, 0, 0)); */
 }
+
 
 .iconos ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     list-style-type: none;
+    margin-bottom: 0;
 }
 
-.iconos li i {
+.iconos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-decoration-line: none;
+    color: black;
+}
+
+.instagram,
+.facebook,
+.whatsapp {
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: center;
-    color: white;
+    align-items: flex-end;
+    margin: 10px 10px;
     font-size: 45px;
-    margin: 10px 20px;
+    padding: 9px 11px 8px 11px;
+    outline: solid transparent 2px;
+    border-radius: 30px;
 }
 
-.copy p {
-    font-size: 10px;
+.iconos .instagram:hover {
+    font-size: 40px;
     color: white;
-    margin-right: 15px;
+    background: linear-gradient(#ffd500e7, #ff7b00e1, #ff006ae1, #d300c5e0, #7538fad8);
+}
+
+.iconos .facebook:hover {
+    font-size: 40px;
+    color: white;
+    background-color: #2e5bbb;
+}
+
+.iconos .whatsapp:hover {
+    font-size: 40px;
+    color: white;
+    background-color: #28bd2f;
+}
+
+.copyright {
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+    font-weight: bolder;
+    margin: 0px 20px;
 }

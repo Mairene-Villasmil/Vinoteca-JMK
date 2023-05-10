@@ -1,6 +1,6 @@
 
 {
-    "datacodigo": "27",
+    "datacodigo": "",
     "productos": [
 
         {
@@ -13,7 +13,7 @@
             "description": "Tempranillo No es una variedad rica en taninos, por lo que los vinos son finos, amables y sedosos en boca. Además, presentan un color rojo intenso y con matices violáceos en su juventud y aromas a fruta roja madura, frutos silvestres, vainilla, tabaco, chocolate y toques herbáceos y florales.",
             "price": 45.200,
             "winePairing": "Prefiere consumir vegetales asados, carnes curadas y quesos, tapas y carnes rojas. Algunos platos que quedarían perfectos con esta opción son paella, jamón serrano, chorizos, pizza, burritos y tacos. La razón de esto es porque la acidez del vino no es tan pronunciada y los sabores que inundan al paladar son a cereza y salsa de tomate.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 2,
@@ -25,7 +25,7 @@
             "description": "Garnacha o Grenache. La uva garnacha se originó muy probablemente en la región de Aragón, en el norte de España. La garnacha se usa a menudo como un componente de mezcla, añadiendo cuerpo y dulzor de frutas al vino.",
             "price": 58.600,
             "winePairing": "Roquefort, Gorgonzola, Stilton o Cabrales son ideales para acompañar vinos de cosechas tardías, dulces naturales o fortificados.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 3,
@@ -37,7 +37,7 @@
             "description": "Malbec. Uva tinta procedente del suroeste de Francia, aunque es la uva emblemática de Argentina, donde se ha adaptado perfectamente. Produce vinos Tintos de cuerpo medio, agradables de tomar por ser muy equilibrados con aromas a mora, violetas, ciruela, cacao y tabaco.            ",
             "price": 69.000,
             "winePairing": "La carne cocida al horno combina muy bien con un Malbec de alta gama.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 4,
@@ -50,7 +50,7 @@
             "description": "",
             "price": 19000,
             "winePairing": "",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 5,
@@ -62,7 +62,7 @@
             "description": "Merlot: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 1-2 semanas. Después de la fermentación, el vino se traslada a barricas de roble para añejarse durante 6-18 meses.",
             "price": 65000,
             "winePairing": "Un vino sofisticado y aromático que se puede maridar con platos de carnes blancas como el pollo o el pavo, o con platos de caza.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 6,
@@ -74,7 +74,7 @@
             "description": "Cabernet Sauvignon: Las uvas se recolectan y se fermentan en barricas de roble durante 2-3 semanas. Después de la fermentación, el vino se traslada a barricas de roble francés para añejarse durante 12-18 meses.",
             "price": 72000,
             "winePairing": "Este vino elegante y con cuerpo combina bien con platos de carne roja como un chuletón o un asado de cordero.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 7,
@@ -86,7 +86,7 @@
             "description": "Nebbiiolo estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 49000,
             "winePairing": " Este vino con cuerpo suave combina a la perfección con pastas rellenas y risotto",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 8,
@@ -98,7 +98,7 @@
             "description": "Malbec: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 2-3 semanas. Después de la fermentación, el vino se traslada a barricas de roble americano para añejarse durante 12-18 meses.",
             "price": 80.000,
             "winePairing": " Este vino de gran cuerpo y sabor intenso se marida bien con carnes rojas como la ternera o el buey.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 9,
@@ -110,7 +110,7 @@
             "description": "Merlot: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 1-2 semanas. Después de la fermentación, el vino se traslada a barricas de roble para añejarse durante 6-18 meses.",
             "price": 75.000,
             "winePairing": "Un vino sofisticado y aromático que se puede maridar con platos de carnes blancas como el pollo o el pavo, o con platos de caza.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 10,
@@ -122,7 +122,7 @@
             "description": "Nebbiolo por su parte, en el Nuevo Mundo los vinos son, generalmente, de capa media alta y presentan un mayor cuerpo, con una intensidad aromática más potente y toques más avainillados y a fruta madura.",
             "price": 12.500,
             "winePairing": " lo mejor que puedes escoger es un vino tinto potente y estructurado (crianzas o reservas), ya que la mayoría de estos platos tienen presencia de algún embutido, como el chorizo o el tocino, lo que les proporciona una consistencia grasosa. Los vinos de esta clase son los más indicados por su concentración de taninos, lo que ayuda a lidiar con la grasa y la untuosidad del plato. ",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 11,
@@ -134,7 +134,7 @@
             "description": "Tempranillo. Obtiene su nombre porque la cosecha de uvas es recogida más temprano que en otras variedades, por lo que son ideales para vinos jóvenes, de sabor afrutado y con un hermoso color rubí.",
             "price": 10.500,
             "winePairing": "Lo ideal es que lo dulce vaya con lo dulce. Tortas, postres, frutas y elaboraciones con cierto tenor dulzón, combinan a la perfecció.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 12,
@@ -146,7 +146,7 @@
             "description": "Merlot. Esta uva procedente del sudoeste de Francia es la segunda cepa tradicional y en importancia de los grandes vinos de Burdeos. Los vinos de Merlot son vinos con cierta intensidad cromática, con grado alcohólico medio alto y con ligeros aromas de cereza, ciruela, chocolate, vainilla, regaliz, tabaco, de cuerpo medio y taninos amables.",
             "price": 8.440,
             "winePairing": "El vacío combina inmejorablemente con un Merlot con crianza en roble.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 13,
@@ -158,7 +158,7 @@
             "description": "2 tipos de uva",
             "price": 7.400,
             "winePairing": "Por su alto contenido graso, los cortes de cerdo combinan muy bien con blends Tintos estructurados",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 14,
@@ -168,9 +168,9 @@
             "category": "Tintos",
             "capacity": "750ml",
             "description": "Malbec jugosos, frutales y con taninos delicados.Uva tinta procedente del suroeste de Francia, aunque es la uva emblemática de Argentina, donde se ha adaptado perfectamente.",
-            "price": 8.000,
+            "price": 12.500,
             "winePairing": "Para acompañar carnes magras, como el cuadril o el lomo",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 15,
@@ -182,7 +182,7 @@
             "description": "Sangiovese: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 1-2 semanas. Después de la fermentación, el vino se traslada a barricas de roble italiano para añejarse durante 12-24 meses.",
             "price": 10.000,
             "winePairing": "Este vino elegante y suave se marida bien con platos de carne de cerdo o con platos de pasta con salsa de tomate.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 16,
@@ -194,7 +194,7 @@
             "description": "Zinfandel: Las uvas se recolectan y se fermentan en barricas de roble durante 2-3 semanas. Después de la fermentación, el vino se traslada a barricas de roble americano para añejarse durante 12-18 meses.",
             "price": 19.000,
             "winePairing": "Un vino sofisticado y con cuerpo que se marida bien con platos de carne roja, como el filete o la carne de buey.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 17,
@@ -206,7 +206,7 @@
             "description": "Tempranillo: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 1-2 semanas. Después de la fermentación, el vino se traslada a barricas de roble americano para añejarse durante 12-24 meses.",
             "price": 18.000,
             "winePairing": "Un vino elegante y suave que se marida bien con platos de carne de ternera, como el filete o la entraña.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 18,
@@ -218,7 +218,7 @@
             "description": "Syrah: Las uvas se recolectan y se fermentan en barricas de roble durante 2-3 semanas. Después de la fermentación, el vino se traslada a barricas de roble francés para añejarse durante 12-18 meses.",
             "price": 43.000,
             "winePairing": "Este vino con notas a frutos del bosque se marida bien con platos de carne de cerdo o con platos de pasta con salsa de tomate.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 19,
@@ -230,7 +230,7 @@
             "description": "Pinot Noir: Las uvas se recolectan y se fermentan en tanques de acero inoxidable durante 1-2 semanas. Después de la fermentación, el vino se traslada a barricas de roble francés para añejarse durante 6-18 meses.",
             "price": 48.000,
             "winePairing": "Este vino equilibrado y aromático es ideal para acompañar platos de caza, como el jabalí o el ciervo.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 20,
@@ -242,7 +242,7 @@
             "description": "Pinot Noir estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 9.000,
             "winePairing": " Este vino combina con carnes rojas magras, quesos maduros",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 21,
@@ -254,7 +254,7 @@
             "description": "Merlot estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 8.000,
             "winePairing": " Este vino  de cuerpo medio combina con carnes rojas magras, quesos maduros",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 22,
@@ -266,7 +266,7 @@
             "description": "Grenache estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 19.000,
             "winePairing": " Este vino de cuerpo medio combina con carnes rojas magras, jamones crudos",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 23,
@@ -278,7 +278,7 @@
             "description": "Carmenere estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 7.500,
             "winePairing": " Este joven vinocombina con carnes rojas,quesos, pastas",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 24,
@@ -290,7 +290,7 @@
             "description": "Malbec estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 9.500,
             "winePairing": " Este vino combina con carnes rojas,quesos, pastas",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 25,
@@ -302,7 +302,7 @@
             "description": "Albarino estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 12.000,
             "winePairing": " Este joven vino de uvas blancas y frutas citricas combina con ensaladas verdes, guacamole,pescados grillados",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 26,
@@ -314,7 +314,7 @@
             "description": "Moscatel estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 11.000,
             "winePairing": " Este vino combina con pescados y mariscos",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 27,
@@ -326,7 +326,7 @@
             "description": "Tempranillo estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 19.000,
             "winePairing": "Este vino con caracter fuerte se combina con carnes rojas grasas y asados",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 28,
@@ -338,7 +338,7 @@
             "description": "Es una uva de gran intensidad aromática que produce vinos de baja acidez, tropicales, dulces, florales y con un toque picante. Sus aromas principales recuerdan a mandarina, rosas, jengibre, lichis y toronja. Marida muy bien con platillos especiados como comida asiática o marroquí.",
             "price": 19.300,
             "winePairing": "Quesos de cabra muy frescos son la combinacion perfecta para un vino blanco, estos puedan igualar su acidez característica sin perder sus atributos.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 29,
@@ -350,7 +350,7 @@
             "description": "Chardonnay. Originaria de Borgoña, aunque también sobresale en California (Estados Unidos) es la uva blanca más emblemática en todo el mundo. Produce vinos blancos con aromas a manzana, piña, mandarina, miel, mantequilla y notas minerales.",
             "price": 15.300,
             "winePairing": "En líneas generales, los Chardonnay frescos y aromáticos, maridan muy bien con pollo asado o al horno. ",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 30,
@@ -362,7 +362,7 @@
             "description": "El Viognier es un vino blanco de cuerpo medio y aromático originario del valle del Ródano, en Francia. Tiene un sabor afrutado con notas de albaricoque, melocotón y pera, así como toques de especias como el jengibre y la canela",
             "price": 23.000,
             "winePairing": "Este vino suele maridar bien con platos de aves, mariscos, curry y queso azul.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 31,
@@ -374,7 +374,7 @@
             "description": "El Albariño es un vino blanco seco y refrescante originario de la región gallega de Rías Baixas, en España. Se caracteriza por su sabor afrutado con notas de limón, manzana y melocotón, y también puede presentar toques salinos y minerales debido a su proximidad al mar.",
             "price": 18.000,
             "winePairing": "Este vino marida bien con mariscos, pescados a la parrilla y platos con salsas cítricas.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 32,
@@ -386,7 +386,7 @@
             "description": "El Rosé de Provence es un vino rosado seco y ligero originario de la región de Provenza, en Francia. Suele tener un sabor afrutado con notas de fresas, frambuesas y cítricos. También puede presentar toques florales y herbales. ",
             "price": 26.000,
             "winePairing": " Este vino es muy versátil y marida bien con una gran variedad de platos, desde ensaladas y quesos hasta carnes blancas y platos con salsas ligeras.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 33,
@@ -398,7 +398,7 @@
             "description": "Para elaborar el vino rosado no se utiliza uva rosa. La Garnacha es una de las variedades de uvas tintas que se emplean para producir este vino.",
             "price": 21.500,
             "winePairing": "Las etiquetas rosés son gratas opciones para armonizar, Ensaladas de camarones, frutos de mar, mariscos; Pescados magros y grasos.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 33,
@@ -410,7 +410,7 @@
             "description": "Riesling estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 15.400,
             "winePairing": " Este vino suave y delicado combina paellas, pastas, postres",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 34,
@@ -422,7 +422,7 @@
             "description": "Xarel, Macabeo estas uvas se recolectan y son fermentadas  en tanques de acero",
             "price": 25.200,
             "winePairing": "Este vino con sabores suaves y citricos combina con ensaladas, Salmon, Suchi",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 35,
@@ -434,7 +434,7 @@
             "description": "El viuleat es un vino espumante seco y refrescante originario de la región de mendoza, en argentina Se produce utilizando el método tradicional champenoise, lo que significa que pasa por una segunda fermentación en botella. El viuleat suele tener un sabor afrutado con notas de manzana, pera y cítricos, y también puede presentar toques de almendra y pan tostado",
             "price": 55.000,
             "winePairing": " Este vino espumante es muy versátil y marida bien con una gran variedad de platos, desde mariscos hasta platos con salsas cremosas y postres a base de frutas. También es una excelente opción para brindar en ocasiones especiales.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 36,
@@ -446,7 +446,7 @@
             "description": "Pinot Meunier.",
             "price": 37.900,
             "winePairing": "Los espumantes son los compañeros ideales de rolls, sashimis y nigiris.",
-            "code": 36
+            "tipo": "Vino"
         },
         {
             "id": 37,
@@ -458,7 +458,7 @@
             "description": "36 años (destilado el 12 de diciembre de 1981, embotellado el 18 de abril de 2018).",
             "price": 370.000,
             "winePairing": "Entre más cacao contenga el chocolate de tu elección, será un mejor acompañante para tu whisky. No tienes que comer una barra de chocolate como tal, sino saborearlo en presentaciones como bombones y mousse.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 38,
@@ -470,7 +470,7 @@
             "description": "El whisky de malta mezclado Dewar's Double Double 36 años tiene notas de sabor de melocotones maduros, aceite de coco y vainilla, todo envuelto en una textura suave y cremosa que es a la vez equilibrada y compleja.",
             "price": 480.000,
             "winePairing": "la pareja ideal para platillos como el sushi, el salmón ahumado o el sashimi.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 39,
@@ -481,7 +481,7 @@
             "capacity": "750ml",
             "description": "Se añeja en botas de jerez es muy equilibrado e increíblemente profundo en el paladar, con delicadas notas especiadas y toque dulce de caramelo",
             "price": 1.069000,
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 40,
@@ -493,7 +493,7 @@
             "description": "El whisky Tomatin de 36 años es un whisky escocés de malta única (Single Malt) producido en la destilería Tomatin, ubicada en las tierras altas de Escocia. Es un whisky muy exclusivo y limitado, ya que se produce en pequeñas cantidades y se envejece durante 36 años en barricas de roble americano y europeo previamente utilizadas para el envejecimiento de jerez.",
             "price": 450.000,
             "winePairing": "El proceso de envejecimiento durante tantos años ha permitido que el whisky adquiera un sabor y aroma únicos, con notas de miel, cítricos y especias, complementadas con un toque de roble y un suave sabor a vainilla. Es un whisky muy equilibrado y elegante, con una textura sedosa y un final largo y suave. ideal para acompañar chocolates oscuros y quesos maduros",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 41,
@@ -505,7 +505,7 @@
             "description": "Signatory Vintage que se maduró en un par de toneles durante 24 años, antes de ser embotellado en abril de 2022 como parte de su Cask Strength Collection.",
             "price": 218.100,
             "winePairing": "Se pueden acompañar cortes a la parrilla, ya sea de vaca o cerdo.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 42,
@@ -516,7 +516,7 @@
             "capacity": "750ml",
             "description": "Es envejecido en barriles de roble donde se obtiene su caracteristico color y olor a vainilla",
             "price": 250.000,
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 43,
@@ -528,7 +528,7 @@
             "description": "El Glen Elgin 24 años tiene un color ámbar dorado oscuro y en nariz presenta aromas a frutas secas, como pasas y dátiles, además de notas de caramelo y miel. En boca, es suave y sedoso, con sabores intensos de frutas maduras y especias suaves, como canela y jengibre. El final es largo y persistente, con notas dulces y afrutadas.",
             "price": 280.000,
             "winePairing": "puede combinarse muy bien con platos dulces y postres, especialmente aquellos con sabores a caramelo y vainilla. Por ejemplo, una tarta de manzana con canela o un pastel de nueces con jarabe de arce pueden complementar bien con las notas dulces y afrutadas del whisky. También puede combinarse con quesos maduros y salados, como el queso azul o el queso de cabra.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 44,
@@ -540,7 +540,7 @@
             "description": "Color ámbar tostado. Notas de vainilla, caramelo, miel y nueces. Toque de naranja y regaliz, un poco de té negro. Acabado corto a mediano, limpio, con más dulce de leche y té de hierbas.",
             "price": 31.900,
             "winePairing": "Los postres en general se fusionan muy bien con el sabor del whisky. Para mejorar la experiencia recomendamos postres muy dulces o con toques de nuez.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 45,
@@ -552,7 +552,7 @@
             "description": "El Buchanan's 18 años se añeja durante un mínimo de 6 años que, sumados a los 12 como mínimo que tienen los whiskies que lo componen, dan 18 años de excelente añejamiento.",
             "price": 57.890,
             "winePairing": "Entre las mejores opciones que resalta están los quesos blancos tipo mozzarella, el aguacate, salmones ahumados, carpaccios, nueces, láminas de pera, sushi, jamón ibérico, ceviches",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 46,
@@ -564,7 +564,7 @@
             "description": "El Glenlivet 18 años es un whisky de malta escocés de Speyside, envejecido durante un mínimo de 18 años en barricas de roble americano y europeo. Este whisky se caracteriza por tener un sabor suave y equilibrado, con notas de frutas maduras, miel y especias. En nariz, presenta aromas dulces de miel y caramelo, con notas de manzana y pera.",
             "price": 54.000,
             "winePairing": "En boca, es sedoso y complejo, con sabores intensos de frutas maduras, especias y madera de roble tostado. El final es largo y persistente, con notas dulces y ligeramente especiadas. Lo que lo hace ideal para acompañar platos frios, y dulces.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 47,
@@ -576,7 +576,7 @@
             "description": "El Glenrothes 18 años es un whisky de malta escocés de Speyside, envejecido durante 18 años en barricas de jerez y roble americano. Este whisky se caracteriza por tener un sabor rico y complejo, con notas de frutas secas, especias y un toque de vainilla. En nariz, presenta aromas a frutas secas y pasas, con notas de canela y jengibre",
             "price": 85.000,
             "winePairing": "En boca, es suave y sedoso, con sabores intensos de frutas maduras, especias y madera de roble tostado. El final es largo y persistente, con notas dulces y ligeramente especiadas",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 48,
@@ -588,7 +588,7 @@
             "description": "El Dalmore Single Malt 18 años es un whisky de malta escocés de las Highlands, envejecido durante 18 años en barricas de jerez y bourbon. Este whisky se caracteriza por tener un sabor rico y afrutado, con notas de naranja, caramelo y chocolate oscuro. En nariz, presenta aromas a cítricos y especias, con notas de vainilla y roble tostado. ",
             "price": 74.000,
             "winePairing": "En boca, es suave y sedoso, con sabores intensos de frutas maduras, caramelo y especias. El final es largo y complejo, con notas de chocolate oscuro y cítricos.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 49,
@@ -600,7 +600,7 @@
             "description": "El Chivas Regal 18 años es un whisky escocés de mezcla premium, envejecido durante 18 años en barricas de jerez y bourbon. Este whisky se caracteriza por tener un sabor suave y equilibrado, con notas de miel, frutas secas y especias. En nariz, presenta aromas a frutas secas y caramelo, con notas de vainilla y roble tostado",
             "price": 70.000,
             "winePairing": " En boca, es sedoso y complejo, con sabores intensos de frutas maduras, miel y especias. El final es largo y persistente, con notas dulces y ligeramente especiadas.",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 50,
@@ -612,7 +612,7 @@
             "description": "Este Whisky tiene una mezcla a  vainilla frutas citricas, almendra y malta tiene su proceso de maceradcion en barriles de roble",
             "price": 51.000,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 51,
@@ -624,7 +624,7 @@
             "description": "Ese sabor de fruta madura melocotones y frambuesa  tiene su proceso de maceradcion en barriles de roble",
             "price": 61.000,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 52,
@@ -637,7 +637,7 @@
             "description": "whisky escocés de una sola malta madurado en barricas de roble español",
             "price": 83.000,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 53,
@@ -649,7 +649,7 @@
             "description": "whisky con olores de notas de frutas exóticas con miel, macerado en roble Europeo ",
             "price": 176.000,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 54,
@@ -658,10 +658,10 @@
             "date": "12 Años",
             "category": "12",
             "capacity": "750ml",
-            "description": "",
+            "description": "es un whisky escocés de malta y grano añejado en barricas de roble durante al menos 12 años, lo que le confiere una complejidad y profundidad de sabores y aromas únicos. Este whisky se caracteriza por su equilibrio entre notas dulces y frutales, como la miel, la vainilla y los cítricos, con notas especiadas y ahumadas, como la canela, el jengibre y la turba",
             "price": 10.700,
-            "winePairing": "",
-            "code": 27
+            "winePairing": "En el paladar, se siente suave y sedoso, con un final largo y agradablemente cálido. Es un whisky ideal para disfrutar solo o con hielo, y también se presta para crear cócteles sofisticados y elegantes. En resumen, Buchanan's 12 años es un whisky de alta calidad y prestigio que representa lo mejor de la tradición escocesa de la destilación de whisky.",
+            "tipo": "Whisky"
         },
         {
             "id": 55,
@@ -673,19 +673,19 @@
             "description": "",
             "price": 28.600,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 56,
             "image": "",
             "name": "Aberlour",
             "date": "",
-            "category": "Whiskys",
+            "category": "12",
             "capacity": "700ml",
             "description": "",
             "price": 20.700,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 57,
@@ -697,7 +697,7 @@
             "description": "",
             "price": 79.600,
             "winePairing": "",
-            "code": 27
+            "tipo": "Whisky"
         },
         {
             "id": 58,
@@ -709,7 +709,7 @@
             "description": "Esta cerveza, este color, se origino en Escocia, y esta pelirroja se encuentra desde hace siglos entre nosotros. En su elaboración predominan la malta de cebada y su color rubí, y a diferencia de la cerveza negra, por ejemplo, casi no incluye lúpulo. Se suele distinguir por sus aromas frutales. La cerveza roja mas popular es la variedad conocida como Scotch Ale, así como también la Red Ale que proviene de Irlanda y en la que predomina la malta caramelo y tostada, para así reforzar su sabor dulce.",
             "price": 58.000,
             "winePairing": "La cerveza ámbar o tostada es una cerveza roja y se elabora con una mezcla de maltas predominantemente oscuras. Estas cervezas pueden ser de fermentación baja o alta y su color varía del cobre al ámbar y al bronce oscuro. Éstas son las combinaciones más equilibradas: quesos a la parrilla, carne de cerdo, y hamburguesas.",
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 59,
@@ -721,7 +721,7 @@
             "description": "Esta cerveza, este color, se origino en Escocia, y esta pelirroja se encuentra desde hace siglos entre nosotros. En su elaboración predominan la malta de cebada y su color rubí, y a diferencia de la cerveza negra, por ejemplo, casi no incluye lúpulo. Se suele distinguir por sus aromas frutales. La cerveza roja mas popular es la variedad conocida como Scotch Ale, así como también la Red Ale que proviene de Irlanda y en la que predomina la malta caramelo y tostada, para así reforzar su sabor dulce.",
             "price": 52.000,
             "winePairing": "La cerveza ámbar o tostada es una cerveza roja y se elabora con una mezcla de maltas predominantemente oscuras. Estas cervezas pueden ser de fermentación baja o alta y su color varía del cobre al ámbar y al bronce oscuro. Éstas son las combinaciones más equilibradas: quesos a la parrilla, carne de cerdo, y hamburguesas.",
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 60,
@@ -733,7 +733,7 @@
             "description": "Esta cerveza, este color, se origino en Escocia, y esta pelirroja se encuentra desde hace siglos entre nosotros. En su elaboración predominan la malta de cebada y su color rubí, y a diferencia de la cerveza negra, por ejemplo, casi no incluye lúpulo. Se suele distinguir por sus aromas frutales. La cerveza roja mas popular es la variedad conocida como Scotch Ale, así como también la Red Ale que proviene de Irlanda y en la que predomina la malta caramelo y tostada, para así reforzar su sabor dulce.",
             "price": 50.000,
             "winePairing": "La cerveza ámbar o tostada es una cerveza roja y se elabora con una mezcla de maltas predominantemente oscuras. Estas cervezas pueden ser de fermentación baja o alta y su color varía del cobre al ámbar y al bronce oscuro. Éstas son las combinaciones más equilibradas: quesos a la parrilla, carne de cerdo, y hamburguesas.",
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 61,
@@ -744,7 +744,7 @@
             "capacity": "50 Litros",
             "description": "Esta cerveza es elaborada a base de malta, levadura, cardamomo, piel de naranja y miel, Tipo de fermentacion Large suave y fresca",
             "price": 58.000,
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 62,
@@ -755,7 +755,7 @@
             "capacity": "30 Litros",
             "description": "Esta cerveza es elaborada a base de malta, levadura, cardamomo, piel de naranja y miel, Tipo de fermentacion Large suave y fresca",
             "price": 52.000,
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 64,
@@ -766,7 +766,7 @@
             "capacity": "20 Litros",
             "description": "Esta cerveza es elaborada a base de malta, levadura, cardamomo, piel de naranja y miel, Tipo de fermentacion Large suave y fresca",
             "price": 50.000,
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 65,
@@ -778,7 +778,7 @@
             "description": "la gustiger es una cerveza negra intensa y compleja, con un sabor fuerte y persistente de café tostado y chocolate negro, con toques de regaliz y una nota amarga en el final. tiene una textura suave y sedosa en la boca, con una carbonatación moderada y un cuerpo medio.  ",
             "price": 58.000,
             "winePairing": "Esta cerveza sería ideal para acompañar postres de chocolate y platos fuertes como asados y estofados.",
-            "code": 3
+            "tipo": "Cerveza"
         },
         {
             "id": 66,
@@ -790,7 +790,7 @@
             "description": "la gustiger es una cerveza negra intensa y compleja, con un sabor fuerte y persistente de café tostado y chocolate negro, con toques de regaliz y una nota amarga en el final. tiene una textura suave y sedosa en la boca, con una carbonatación moderada y un cuerpo medio.  ",
             "price": 52.000,
             "winePairing": "Esta cerveza sería ideal para acompañar postres de chocolate y platos fuertes como asados y estofados.",
-            "code": 3
+            "tipo": "Cerveza"
         }, 
         {
             "id": 67,
@@ -802,7 +802,131 @@
             "description": " la gustiger es una cerveza negra intensa y compleja, con un sabor fuerte y persistente de café tostado y chocolate negro, con toques de regaliz y una nota amarga en el final. tiene una textura suave y sedosa en la boca, con una carbonatación moderada y un cuerpo medio.  ",
             "price": 50.000,
             "winePairing": "Esta cerveza sería ideal para acompañar postres de chocolate y platos fuertes como asados y estofados.",
-            "code": 3
+            "tipo": "Cerveza"
+        },
+        {
+            "id": 68,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift cardcard",
+            "description": "",
+            "price": 8000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 69,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift card",
+            "description": " ",
+            "price": 50000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 70,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift card",
+            "description": "  ",
+            "price": 15000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 71,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift card",
+            "description": "",
+            "price": 11000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 72,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift card",
+            "description": " ",
+            "price": 20000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 73,
+            "image": "",
+            "name": "Gift Card",
+            "date": "2023",
+            "category": "gift card",
+            "description": " ",
+            "price": 12000,
+            "tipo": "Gift Card"
+        },
+        {
+            "id": 74,
+            "image": "",
+            "name": "",
+            "date": "2023",
+            "category": "Oferta",
+            "description": " ",
+            "price": 25000,
+            "tipo": "Oferta"
+        },
+        {
+            "id": 75,
+            "image": "",
+            "name": "",
+            "date": "2023",
+            "category": "Oferta",
+            "description": " ",
+            "price": 25000,
+            "tipo": "Oferta"
+        },
+        {
+            "id": 76,
+            "image": "",
+            "name": "",
+            "date": "2023",
+            "category": "Oferta",
+            "description": " ",
+            "price": 25000,
+            "tipo": "Oferta"
+        },
+        {
+            "id": 77,
+            "image": "",
+            "name": "",
+            "date": "2023",
+            "category": "Oferta",
+            "description": " ",
+            "price": 25000,
+            "tipo": "Oferta"
+        },
+        {
+            "id": 78,
+            "image": "",
+            "name": "Buchanans",
+            "date": "2023",
+            "category": "Oferta",
+            "capacity": "750 ml",
+            "description": "es un whisky escocés de malta y grano añejado en barricas de roble durante al menos 12 años, lo que le confiere una complejidad y profundidad de sabores y aromas únicos. Este whisky se caracteriza por su equilibrio entre notas dulces y frutales, como la miel, la vainilla y los cítricos, con notas especiadas y ahumadas, como la canela, el jengibre y la turba.",
+            "price": 10700,
+            "winePairing": "En el paladar, se siente suave y sedoso, con un final largo y agradablemente cálido. Es un whisky ideal para disfrutar solo o con hielo, y también se presta para crear cócteles sofisticados y elegantes. En resumen, Buchanan's 12 años es un whisky de alta calidad y prestigio que representa lo mejor de la tradición escocesa de la destilación de whisky.",
+            "tipo": "Oferta"
+        },
+        {
+            "id": 79,
+            "image": "",
+            "name": "SERC",
+            "date": "2019",
+            "category": "Oferta",
+            "capacity": "750 ml",
+            "description": "Malbec jugosos, frutales y con taninos delicados.Uva tinta procedente del suroeste de Francia, aunque es la uva emblemática de Argentina, donde se ha adaptado perfectamente.",
+            "price": 12500,
+            "winePairing": "Para acompañar carnes magras, como el cuadril o el lomo",
+            "tipo": "Oferta"
         }
     ]
 }

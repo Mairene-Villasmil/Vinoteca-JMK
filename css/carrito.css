@@ -7,6 +7,14 @@
     margin-top: 50px;
 }
 
+.cantidad{
+    font-size: 20px;
+}
+
+.precio{
+    font-size: 25px;
+}
+
 .carrito {
     width: 100%;
     height: 800px;
@@ -66,7 +74,6 @@
     align-items: center;
 }
 
-
 input[type="text"], input[type="email"], input[type="tel"], input[type="documento"], textarea , input[type="number"]{
     width: 100%;
     height: 25px;
@@ -89,6 +96,25 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="document
     border-bottom: 1px solid rgb(221, 221, 221);
 }
 
+.subtotal{
+    font-size: 30px;
+}
+
+.totalPago{
+    font-size: 30px;
+}
+
+.facturaCorreo{
+    font-size: 30px;
+}
+
+.descuentoSocio,
+.codigoDescuento{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
 button {
     width: 100px;
     background-color: transparent;
@@ -103,12 +129,13 @@ button:hover{
 
 .eresSocio{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     font-size: 25px;
     margin-top: 50px;
 }
 
 .eresSocio input{
-    width: 20%;
+    width: 30%;
 }

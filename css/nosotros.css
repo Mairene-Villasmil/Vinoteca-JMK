@@ -6,9 +6,10 @@
     align-items: center;
 }
 
-.dos h1 {
+h1 {
     font-size: 50px;
     font-weight: bolder;
+    text-align: center;
 }
 
 .nosotros {
@@ -57,15 +58,16 @@
 }
 
 .texto-n {
+    width: 50%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 50%;
     height: 600px;
 }
 
 .texto-n p {
-    font-size: 30px;
+    font-size: 28px;
     text-align: justify;
-    padding-right: 35px;
+    padding-right: 55px;
 }

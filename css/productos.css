@@ -88,9 +88,6 @@ section h1{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-width: 2px;
-    border-style: solid;
-    border-color: transparent;
     border-image: initial;
     margin: 50px 50px;
 }
@@ -130,7 +127,6 @@ section h1{
     background-color: transparent;
     color: black;
     padding: 8px;
-    border: 2px solid black;
     text-decoration-line: none;
 }
 
