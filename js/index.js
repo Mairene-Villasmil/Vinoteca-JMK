@@ -52,13 +52,42 @@ let carruselWhisky = document.getElementById("carruselWhisky")
 let carruseCerveza = document.getElementById("carruselCerveza")
 let carruselEvento = document.getElementById("carruselEventos")
 let carruselRecorridos = document.getElementById("carruselRecorridos")
+let direcciones = [
+    {
+        lugar: "CABA",
+        mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16943.51400161281!2d-58.425220504932355!3d-34.60020707499394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca795cae367b%3A0x96a078708e4bb085!2sDesarmadero%20Bar!5e0!3m2!1ses!2sar!4v1683759291678!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+    },
+    {
+        lugar: "CORDOBA",
+        mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28624.632049267766!2d-64.21741563022573!3d-31.414805407709338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298830933ad09%3A0xb72fd713f4c77c4e!2sNuevocentro%20Shopping!5e0!3m2!1ses!2sar!4v1683759517328!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+    },
+    {
+        lugar: "SANTA FE",
+        mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3397.4241771886514!2d-60.71884062466108!3d-31.62223450623227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a9d3f8084a8b%3A0x1d400f128baa0e62!2sCochabamba%204598%2C%20S3002%20HCW%2C%20Santa%20Fe!5e0!3m2!1ses!2sar!4v1683759633597!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+    },
+    {
+        lugar: "PROVINCIA DE BUENOS AIRES",
+        mapa: 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d105032.1099289019!2d-58.69499071328549!3d-34.64830201189187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scaba%20de%20vino%20en%20provincia%20de%20buenos%20aires!5e0!3m2!1ses!2sar!4v1683828725633!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+    },
+    {
+        lugar: "MENDOZA",
+        mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43890.813249035265!2d-68.87663152123213!3d-32.885394911790314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e091c4d27b735%3A0x4dbe53d1205464cc!2sBodegas%20Y%20Vi%C3%B1edos%20Benedetti!5e0!3m2!1ses!2sar!4v1683828642957!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+    }
+]
+let cartInfo = document.querySelector(".cart-product")
+let rowProduct = document.querySelector(".row-product")
+// let productList = document.querySelector(".cuerpoPagina")
+let allProducts = [] //aca se van a agregar todos los productos que se agreguen al carrito
+
+
+
+
 
 var botonesNav = document.getElementsByClassName("nav-link")
 for (var i = 0; i < botonesNav.length; i++) {
     const elementos = botonesNav[i]
     elementos.addEventListener("click", function (e) {
         mostrarPage(e.target.id)
-        console.log(botonesNav)
     })
 }
 
@@ -201,18 +230,19 @@ function mostrarPage(id) {
             <section>
                 <div class="formApp">
                     <div class="formulario">
-                        <form class="form">
+                        <form class="form" id="formContactanos">
                             <h1>CONTACTA CON NOSOTROS</h1>
-                            <div class="formulario_dos"> 
-                              <label for="nombre"></label>   
+                            <div class="formulario_dos">
+                              <label for="nombre"></label>
                               <input type="text" name="nombre" placeholder="Nombre">
                               <label for="email"></label>
                               <input type="email" name="email" placeholder="E-mail">
                               <label for="text"></label>
                               <textarea name="message" placeholder="Mensaje"></textarea>
-                              <button id="content" type="submit" >Enviar</button>
+                              <button id="content" type="submit">Enviar</button>
                             </div>
                           </form>
+
                     </div>
                     <div class="app">
                         <h1>DESCARGATE LA APP</h1>
@@ -220,24 +250,47 @@ function mostrarPage(id) {
                     </div>
                 </div>
                 <div class="sucursalM">
-                    <div class="mapa">
-                        <aside>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3414606.090072612!2d-67.4132542735336!3d-36.012642004951196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaf5f5fdc667%3A0x3d2f77992af00fa8!2sArgentina!5e0!3m2!1ses!2sar!4v1680838068662!5m2!1ses!2sar" width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </aside>
+                    <div class="mapa" id="mapa">
+
                     </div>
                     <div class="sucursal">
                         <h1>ELEGÍ LA SUCURSAL MÁS CERCANA</h1>
-                        <ul>
-                            <li>CABA</li>
-                            <li>PROVINCIA DE BUENOS AIRES</li>
-                            <li>CORDOBA</li>
-                            <li>ROSARIO</li>
-                            <li>MENDOZA</li>
+                        <ul id="lugares">
+                            <li class="lugar">CABA</li>
+                            <li class="lugar">PROVINCIA DE BUENOS AIRES</li>
+                            <li class="lugar">CORDOBA</li>
+                            <li class="lugar">SANTA FE</li>
+                            <li class="lugar">MENDOZA</li>
                         </ul>
                     </div>
                 </div>
+                <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>¡Gracias por comunicarte con nosotros!</p>
+              </div>
+            </div>
             </section>
             `
+            document.getElementById("formContactanos").addEventListener("submit", function (e) {
+                e.preventDefault()
+                console.log(e.target.id);
+                //agregamos la funcion del modal
+            })
+
+            document.getElementById("mapa").innerHTML = `
+            <aside>
+                <iframe src="${direcciones[0].mapa}"></iframe>
+            </aside>
+            `
+            let lugares = document.querySelectorAll(".lugar")
+            console.log(lugares);
+            for (var i = 0; i < lugares.length; i++) {
+                lugares[i].addEventListener("click", function (e) {
+                    displayMapa(e.target.innerHTML)
+                    console.log(e.target.innerHTML)
+                })
+            }
             break;
 
         case "compras":
@@ -250,42 +303,42 @@ function mostrarPage(id) {
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
             pagInicio.style.display = "flex"
-            pagInicio.innerHTML = `
-            <section>
-                <div class="carrito">
-                    <div class="subtotal">
-                        <div class="tarjeta-c">
-                            <a href="../paginas/detalles.html"><img src="../imagenes/RAME1.png" alt="vino"></a>
-                            <p class="cantidad">01</p>
-                            <p class="precio">$ 9.200</p>
+            pagInicio.innerHTML =
+                `
+        <section id="siete">
+            <div class="carrito">
+                <div class="container-cart-products hidden-cart">
+                <div class="row-product" id="tarjetasProductos">
+
+
+					<div class="cart-product">
+						<div class="info-cart-product">
+                            <span class="cantidad-producto-carrito">${product.cantidad}</span>
+                            <p class="titulo-producto-carrito">${product.titulo}</p>
+                            <span class="precio-producto-carrito">$${product.precio}</span>
                         </div>
-                        <div class="tarjeta-c">
-                            <a href="../paginas/detalles.html"><img src="../imagenes/9.png" alt="Whisky"></a>
-                            <p class="cantidad">01</p>
-                            <p class="precio">$ 65.000</p>
-                        </div>
-                        <div class="tarjeta-c">
-                            <a href="../paginas/detalles.html"><img src="../imagenes/VintageRouge1.png" alt="vino"></a>
-                            <p class="cantidad">01</p>
-                            <p class="precio">$ 22.500</p>
-                        </div>
-                        <div class="tarjeta-c">
-                            <a href="../paginas/detalles.html"><img src="../imagenes/Sweet1.png" alt="vino"></a>
-                            <p class="cantidad">01</p>
-                            <p class="precio">$ 17.300</p>
-                        </div>
-                        <div class="costo">
-                            <h1 class="subtotal">SUBTOTAL $ 114.000</h1>
-                        </div>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+					</div>
+
+
+                </div>
+                    <div class="cart-total">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                    </div>
+				</div>
                         <div class="eresSocio">
                             <label class="codigoDescuento">¿Eres Socio? Ingresa tu código de descuento</label>
                             <input type="text" placeholder="000-000-0000">
-                           <p class="descuentoSocio">En caso de ser socio se aplica un 15% de descuento al total de la compra</p>
+                           <p class="descuentoSocio">Con el codigo de socio tendras un 15% de descuento del total en tu compra</p>
                         </div>
                     </div>
+            </div>
+            <div class="carritoDos">
                     <div class="pagar">
                         <div class="total">
-                            <h1 class="totalPago">TOTAL A PAGAR $ 96.900</h1>
+                            <h1 class="totalPago">TOTAL A PAGAR $</h1>
                             <label for="email"></label>
                             <input type="email" name="email" placeholder="E-mail">
                             <p class="facturaCorreo">A este correo se enviara la factura y detalles de su envío.</p>
@@ -304,8 +357,15 @@ function mostrarPage(id) {
                         </div>
                     </div>
                 </div>
-            </section>
+                <div id="modal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>¡Gracias por comunicarte con nosotros!</p>
+              </div>
+            </div>
+        </section>
             `
+            carritoProductos()
             break;
         case "socio":
             carruselInicio.style.display = "none"
@@ -354,7 +414,7 @@ function mostrarPage(id) {
                             <img src="../imagenes/socioUno.jpg" alt="">
                         </div>
                 </div>
-            </section> 
+            </section>
             <section id="comoFunciona">
                 <div class="Funcion">
                     <div class="comoFunciona">
@@ -404,6 +464,16 @@ function mostrarPage(id) {
             display(oferta)
     }
 
+} 
+
+function displayMapa(lugar) {
+    let funcionDirecciones = direcciones.filter(direccion => direccion.lugar === lugar)
+    console.log(funcionDirecciones)
+    document.getElementById("mapa").innerHTML = `
+    <aside>
+        <iframe src="${funcionDirecciones[0].mapa}"></iframe>
+    </aside>
+    `
 }
 
 function display(array) {
@@ -411,18 +481,64 @@ function display(array) {
     for (var i = 0; i < array.length; i++) {
         tarjetasHTML += `
         <div class="card">
-        <img src="../imagenes/${array[i].image}" alt="">
-        <p>${array[i].name}</p>
-        <div class="detalles">
-            <p>$ ${array[i].price}</p>
-            <a href="../paginas/detalles.html">Detalles</a>
+            <img src="../imagenes/${array[i].image}" alt="">
+            <p class="tituloCard">${array[i].name}</p>
+            <div class="detalles">
+                <p class="precioDetalle">$${array[i].price}</p>
+                <a href="#">Detalles</a>
+            </div>
+            <button class="add-cart">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
         </div>
-        <a href="../paginas/carrito.html" class="CARRITO">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></a>
-    </div>
-            `
+    `
     }
     pagInicio.innerHTML = tarjetasHTML
 }
+
+
+// Carrito de compras, las variables se declararon arriba en la global
+pagInicio.addEventListener("click", e =>{
+
+    if(e.target.classList.contains("add-cart")){
+        let producto = e.target.parentElement // con parentElemen podemos acceder al elemento completo(retrocedemos), en este caso la tarjeta
+        let infProducto = {
+            cantidad: 1,
+            titulo: producto.querySelector(".tituloCard").textContent,
+            precio: producto.querySelector(".precioDetalle").textContent
+        }
+        allProducts = [...allProducts, infProducto] //de esta manera combinamos estos 2 arrays
+        console.log(infProducto)
+    }
+    console.log(allProducts)
+})
+
+function carritoProductos(){
+allProducts.forEach(product => {
+		const containerProduct = document.createElement('div');
+		containerProduct.classList.add('cart-product');
+
+		rowProduct.append(containerProduct);
+	});
+}
+// FUNCION PARA EL MODAL
+// let form = document.querySelector("form")
+// const modal = document.querySelector('#modal')
+// const cerrar = document.querySelector('.close')
+// form.addEventListener("submit", (event) => {
+//     actionForm(event)
+//     modal.style.display = "block"
+// })
+
+// function modalForm() {
+//     modal.style.display = "none";
+//     location.reload()
+// }
+// cerrar.addEventListener("click", modalForm);
+
+// window.addEventListener("click", (event) => {
+//     if (event.target == modal) {
+//         modal.style.display = "none"
+//     }
+// })
 
 let busquedaSearch = document.getElementById("inputSearch")
 busquedaSearch.addEventListener("keyup", function (e) {

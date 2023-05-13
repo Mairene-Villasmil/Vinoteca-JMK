@@ -24,18 +24,25 @@
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header id="suscribirme">
+        <nav id="VolverArriba">
             <div class="navegacion">
                 <div class="imagen">
                     <a href="./index.html"><img src="./imagenes/logo.png" alt="LOGO"></a>
                 </div>
                 <div class="login">
                     <ul>
-                        <li class="nav-bar"><i class="fa-solid fa-user"></i>
+                        <li class="nav-bar nav-link"><i class="fa-solid fa-user"></i>
                             <ul class="menuD">
                                 <li class="nav-link"><a href="#" id="socio">HACERSE SOCIO</a></li>
-                                <li class="nav-link">INICIAR SESIÓN</li>
+                                <li class="nav-link">INICIAR SESIÓN
+                                    <div id="modal" class="modal">
+                                        <div class="modal-content">
+                                          <span class="close">&times;</span>
+                                          <p>¡Gracias por comunicarte con nosotros!</p>
+                                        </div>
+                                      </div>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -59,7 +66,10 @@
                             </ul>
                         </li>
                         <li class="nav-link"><a href="#" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
-                        <li class="nav-link"><a href="#" class="nav-bar" id="compras">CARRITO</a></li>
+                        <li class="nav-link container-icon"><i class="fa-solid fa-cart-shopping" id="compras"></i></li>
+                        <div class="count-products">
+                            <span id="contador-productos">0</span>
+                        </div>
                     </ul>
                 </div>
             </div>
@@ -77,18 +87,18 @@
         <section class="imagenCarrusel" id="carruselInicio">
             <div class="marquee">
                 <div class="slide">
-                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselFiesta.png" alt=""></a>
-                    <a href="./paginas/cervezas.html"><img src="./imagenes/carruselCerveza6.png" alt=""></a>
-                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselRosado.png" alt=""></a>
-                    <a href="./paginas/whiskys.html"><img src="./imagenes/carruselWhisky.png" alt=""></a>
-                    <a href="./paginas/recorridos.html"><img src="./imagenes/carruselRecorrido.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselFiesta.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselCerveza6.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselRosado.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselWhisky.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselRecorrido.png" alt=""></a>
                 </div>
                 <div class="slide">
-                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselTinto10.png" alt=""></a>
-                    <a href="./paginas/vinos.html"><img src="./imagenes/carruselDiez.png" alt=""></a>
-                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselCata.png" alt=""></a>
-                    <a href="./paginas/cervezas.html"><img src="./imagenes/carruselCerveza.png" alt=""></a>
-                    <a href="./paginas/eventos.html"><img src="./imagenes/carruselEspumante2.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselTinto10.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselDiez.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselCata.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselCerveza.png" alt=""></a>
+                    <a href="#"><img src="./imagenes/carruselEspumante2.png" alt=""></a>
                 </div>
             </div>
         </section>
@@ -178,8 +188,8 @@
             </div>
         </section>
         <section id="checkboxProductos"></section>
-        <section class="cuerpoPagina" id="uno"></section>
         <section id="serSocio"></section>
+        <section class="cuerpoPagina" id="uno"></section>
     </main>
     <footer>
         <div class="iconos">
@@ -189,9 +199,11 @@
                 <li class="whatsapp"><i class="fa-brands fa-whatsapp"></i></li>
             </ul>
         </div>
-        <p class="copyright">Copyright&copy; Vinoteca JMK- Todos los derechos reservados</p>
+        <div class="copy">
+            <a href="#VolverArriba">Volver al Principio<i class="fa-solid fa-chevron-up"></i></a>
+            <p class="copyright">Copyright&copy; Vinoteca JMK- Todos los derechos reservados</p>
+        </div>
     </footer>
-
 
     <script src="./js/index.js"></script>
 

@@ -129,3 +129,12 @@ button:hover{
     font-weight: bolder;
     font-size: 18px;
 }
+
+.lugar{
+    cursor: pointer;
+}
+
+.lugar:hover{
+    color: rgb(47, 47, 185);
+    text-decoration-line: underline;
+}

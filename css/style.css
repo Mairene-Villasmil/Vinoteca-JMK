@@ -50,7 +50,7 @@ nav {
     height: 13vh;
 }
 
-.botones a {
+.botones a{
     text-decoration-line: none;
     font-size: 18px;
     font-weight: bolder;
@@ -60,7 +60,14 @@ nav {
 }
 
 .botones i {
+    cursor: pointer;
     font-size: 25px;
+    color: white;
+    margin: 0px 25px 10px 0px;
+}
+
+.container-icon{
+    position: relative;
 }
 
 .botones>li {
@@ -150,6 +157,49 @@ main {
     min-height: 45vh
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
+    margin: 15% auto;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    width: 80%;
+    max-width: 400px;
+}
+
+.modal-content p{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .whatsappB {
     position: fixed;
     right: 1%;
@@ -168,7 +218,6 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
- /* background: linear-gradient(rgb(24, 22, 22), rgb(0, 0, 0), rgb(0, 0, 0)); */
 }
 
 
@@ -225,5 +274,19 @@ footer {
     color: rgb(0, 0, 0);
     font-size: 10px;
     font-weight: bolder;
-    margin: 0px 20px;
+    margin: 10px 20px 0px 0px;
+}
+
+.copy{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.copy a{
+    font-weight: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: black;
 }
