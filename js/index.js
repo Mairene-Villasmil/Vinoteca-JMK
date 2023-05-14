@@ -535,7 +535,6 @@ pagInicio.addEventListener("click", e => {
 
 function carrito() {
     let listaCarrito = "";
-    let totalPagar = 0;
     let totalProductos = 0;
     for (var i = 0; i < allProducts.length; i++) {
         listaCarrito += `
@@ -548,39 +547,52 @@ function carrito() {
           </svg>
         </div>
           `;
-
-          sumarTotal()
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
 
-    
-    valorTotal = `$${totalPagar}` 
-    contadorProductos= totalProductos
+    sumarTotal()
 }
 
-function sumarTotal(){
-    for (var i = 0; i < totalPagar.length; i++){
-        totalPagar = totalPagar + parseInt(allProducts.cantidad * allProducts.price);
-        allProducts = allProducts + allProducts.cantidad;
-    totalPagar= `
-        <h3>Total:</h3>
-        <span class="total-pagar">$${allProducts.totalPagar}</span>
-    `
+function sumarTotal() {
+    let totalPagar = 0;
+    for (var i = 0; i < allProducts.length; i++) {
+      let precio = allProducts[i].precio;
+      precio = parseInt(precio.replace(/\D/g, "")); // Extraer solo los dígitos numéricos
+      totalPagar += (allProducts[i].cantidad) * precio;
     }
-    document.getElementById("totalDelCarrito").innerHTML = totalPagar
-}
+    document.getElementById("totalDelCarrito").innerHTML = `
+      <h3>Total:</h3>
+      <span class="total-pagar">$${totalPagar}</span>
+    `;
+    valorTotal = `$${totalPagar}`;
+    contadorProductos = allProducts;
+  }
+  
 
-// function carritoProductos(){
-//     showHTML = ()=>{
 
-// allProducts.forEach(product => {
-// 		const containerProduct = document.createElement('div');
-// 		containerProduct.classList.add('cart-product');
+  
+  
 
-// 		rowProduct.append(containerProduct);
-// 	});
+// anterior funcion
+// function sumarTotal(){
+//     let totalPagar = 0;
+//     for (var i = 0; i < allProducts.length; i++){
+//     totalPagar += `
+//         <h3>Total:</h3>
+//         <span class="total-pagar">$${(allProducts.cantidad) * parseInt(allProducts[i].precio)}</span>
+//     `
+//     }
+//     document.getElementById("totalDelCarrito").innerHTML = totalPagar
+//     valorTotal = `$${totalPagar}` 
+//     contadorProductos= allProducts
 // }
-// }
+   
+
+
+
+
+
+
 // FUNCION PARA EL MODAL
 // let form = document.querySelector("form")
 // const modal = document.querySelector('#modal')
