@@ -76,12 +76,10 @@ let direcciones = [
 ]
 let cartInfo = document.querySelector(".cart-product")
 let rowProduct = document.querySelector(".row-product")
-// let productList = document.querySelector(".cuerpoPagina")
 let allProducts = [] //aca se van a agregar todos los productos que se agreguen al carrito
-
-
-
-
+let carritoCompras = document.getElementById("carritoCompras")
+let valorTotal = document.querySelector(".total-pagar")
+let contadorProductos = document.getElementById("contador-productos")
 
 var botonesNav = document.getElementsByClassName("nav-link")
 for (var i = 0; i < botonesNav.length; i++) {
@@ -143,12 +141,14 @@ function mostrarPage(id) {
             carruselWhisky.style.display = "none"
             carruseCerveza.style.display = "none"
             carruselEvento.style.display = "none"
+            carritoCompras.style.display = "none"
             carruselRecorridos.style.display = "none"
-            display(vinos)
             arrayFiltro = vinos
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
             busquedaSearch.style.display = "flex"
+            pagInicio.style.display = "flex"
+            display(vinos)
             productosVinoteca(vinos)
             break;
 
@@ -159,11 +159,13 @@ function mostrarPage(id) {
             carruseCerveza.style.display = "none"
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
-            display(whisky)
+            carritoCompras.style.display = "none"
             arrayFiltro = whisky
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
             busquedaSearch.style.display = "flex"
+            pagInicio.style.display = "flex"
+            display(whisky)
             productosVinoteca(whisky)
             break;
 
@@ -174,11 +176,13 @@ function mostrarPage(id) {
             carruseCerveza.style.display = "flex"
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
-            display(cerveza)
+            carritoCompras.style.display = "none"
             arrayFiltro = cerveza
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
             busquedaSearch.style.display = "flex"
+            pagInicio.style.display = "flex"
+            display(cerveza)
             productosVinoteca(cerveza)
             break;
 
@@ -191,6 +195,8 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
+            pagInicio.style.display = "flex"
             display(giftCard)
             break;
         case "eventos":
@@ -198,21 +204,26 @@ function mostrarPage(id) {
             carruselVino.style.display = "none"
             carruselWhisky.style.display = "none"
             carruseCerveza.style.display = "none"
-            carruselEvento.style.display = "flex"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
+            carruselEvento.style.display = "flex"
+            pagInicio.style.display = "flex"
             display(eventos)
             break;
+
         case "recorridos":
             carruselInicio.style.display = "none"
             carruselVino.style.display = "none"
             carruselWhisky.style.display = "none"
             carruseCerveza.style.display = "none"
             carruselEvento.style.display = "none"
-            carruselRecorridos.style.display = "flex"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
+            carruselRecorridos.style.display = "flex"
+            pagInicio.style.display = "flex"
             display(recorridos)
             break;
 
@@ -225,6 +236,7 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
             <section>
@@ -302,30 +314,21 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
-            pagInicio.style.display = "flex"
-            pagInicio.innerHTML =
+            pagInicio.style.display = "none"
+            carritoCompras.style.display = "flex"
+            carritoCompras.innerHTML =
                 `
         <section id="siete">
             <div class="carrito">
                 <div class="container-cart-products hidden-cart">
                 <div class="row-product" id="tarjetasProductos">
-
-
 					<div class="cart-product">
-						<div class="info-cart-product">
-                            <span class="cantidad-producto-carrito">${product.cantidad}</span>
-                            <p class="titulo-producto-carrito">${product.titulo}</p>
-                            <span class="precio-producto-carrito">$${product.precio}</span>
+						<div class="info-cart-product" id="contenedorCarrito">
                         </div>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
 					</div>
-
-
                 </div>
-                    <div class="cart-total">
-                        <h3>Total:</h3>
-                        <span class="total-pagar">$200</span>
+                    <div class="cart-total" id="totalDelCarrito">
+                        
                     </div>
 				</div>
                         <div class="eresSocio">
@@ -365,7 +368,7 @@ function mostrarPage(id) {
             </div>
         </section>
             `
-            carritoProductos()
+            carrito()
             break;
         case "socio":
             carruselInicio.style.display = "none"
@@ -376,6 +379,7 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
     <section>
@@ -461,10 +465,12 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
+            pagInicio.style.display = "flex"
             display(oferta)
     }
 
-} 
+}
 
 function displayMapa(lugar) {
     let funcionDirecciones = direcciones.filter(direccion => direccion.lugar === lugar)
@@ -481,7 +487,7 @@ function display(array) {
     for (var i = 0; i < array.length; i++) {
         tarjetasHTML += `
         <div class="card">
-            <img src="../imagenes/${array[i].image}" alt="">
+            <img src="../imagenes/${array[i].image}" class="img-car" alt="">
             <p class="tituloCard">${array[i].name}</p>
             <div class="detalles">
                 <p class="precioDetalle">$${array[i].price}</p>
@@ -494,31 +500,87 @@ function display(array) {
     pagInicio.innerHTML = tarjetasHTML
 }
 
-
 // Carrito de compras, las variables se declararon arriba en la global
-pagInicio.addEventListener("click", e =>{
+pagInicio.addEventListener("click", e => {
 
-    if(e.target.classList.contains("add-cart")){
+    if (e.target.classList.contains("add-cart")) {
         let producto = e.target.parentElement // con parentElemen podemos acceder al elemento completo(retrocedemos), en este caso la tarjeta
         let infProducto = {
             cantidad: 1,
             titulo: producto.querySelector(".tituloCard").textContent,
             precio: producto.querySelector(".precioDetalle").textContent
         }
-        allProducts = [...allProducts, infProducto] //de esta manera combinamos estos 2 arrays
-        console.log(infProducto)
+
+        let siExiste = allProducts.some(
+            producto => producto.titulo === infProducto.titulo)
+        if (siExiste) {
+            let productoRepetido = allProducts.map(producto => {
+                if (producto.titulo === infProducto.titulo) {
+                    producto.cantidad++
+                    return producto
+                } else {
+                    return producto
+                }
+            })
+            allProducts = [...productoRepetido];
+        } else {
+            allProducts = [...allProducts, infProducto] //de esta manera combinamos estos 2 arrays
+            console.log(infProducto)
+            console.log(allProducts)
+        }
+
     }
-    console.log(allProducts)
 })
 
-function carritoProductos(){
-allProducts.forEach(product => {
-		const containerProduct = document.createElement('div');
-		containerProduct.classList.add('cart-product');
 
-		rowProduct.append(containerProduct);
-	});
+function carrito() {
+    let listaCarrito = "";
+    let totalPagar = 0;
+    let totalProductos = 0;
+    for (var i = 0; i < allProducts.length; i++) {
+        listaCarrito += `
+        <div class="cardCarrito">
+          <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
+          <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
+          <span class="precio-producto-carrito">${allProducts[i].precio}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+		    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </div>
+          `;
+
+          sumarTotal()
+    }
+    document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
+
+    
+    valorTotal = `$${totalPagar}` 
+    contadorProductos= totalProductos
 }
+
+function sumarTotal(){
+    for (var i = 0; i < totalPagar.length; i++){
+        totalPagar = totalPagar + parseInt(allProducts.cantidad * allProducts.price);
+        allProducts = allProducts + allProducts.cantidad;
+    totalPagar= `
+        <h3>Total:</h3>
+        <span class="total-pagar">$${allProducts.totalPagar}</span>
+    `
+    }
+    document.getElementById("totalDelCarrito").innerHTML = totalPagar
+}
+
+// function carritoProductos(){
+//     showHTML = ()=>{
+
+// allProducts.forEach(product => {
+// 		const containerProduct = document.createElement('div');
+// 		containerProduct.classList.add('cart-product');
+
+// 		rowProduct.append(containerProduct);
+// 	});
+// }
+// }
 // FUNCION PARA EL MODAL
 // let form = document.querySelector("form")
 // const modal = document.querySelector('#modal')
