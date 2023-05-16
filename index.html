@@ -35,13 +35,23 @@
                         <li class="nav-bar nav-link"><i class="fa-solid fa-user"></i>
                             <ul class="menuD">
                                 <li class="nav-link"><a href="#" id="socio">HACERSE SOCIO</a></li>
-                                <li class="nav-link">INICIAR SESIÓN
-                                    <div id="modal" class="modal">
-                                        <div class="modal-content">
-                                          <span class="close">&times;</span>
-                                          <p>¡Gracias por comunicarte con nosotros!</p>
+                                <li class="nav-link loginIcono" id="loginIcono">INICIAR SESIÓN
+                                    <div id="modalLogin" class="modal">
+                                        <div class="modal-contentLogin">
+                                            <span id="closeLogin">&times;</span>
+                                            <form action="" class="formLogin">
+                                                <div class="input">
+                                                <label for="nombre"><i class="fa-solid fa-user"></i></label>
+                                                <input type="text" name="Nombre" placeholder="Nombre de Usuario" required>
+                                                </div>
+                                                <div class="input">
+                                                <label for="password"><i class="fa-solid fa-lock"></i></label>
+                                                <input type="password" name="password" placeholder="Contraseña" required>
+                                                </div>
+                                                <button id="botonLogin" type="submit">Ingresar</button>
+                                            </form>
                                         </div>
-                                      </div>
+                                    </div>
                                 </li>
                             </ul>
                         </li>
@@ -66,10 +76,10 @@
                             </ul>
                         </li>
                         <li class="nav-link"><a href="#" class="nav-bar" id="contactanos">CONTACTANOS</a></li>
-                        <li class="nav-link container-icon"><i class="fa-solid fa-cart-shopping" id="compras"></i></li>
-                        <div class="count-products">
-                            <span id="contador-productos">0</span>
-                        </div>
+                        <li class="nav-link container-icon"><i class="fa-solid fa-cart-shopping" id="compras"></i>
+                            <div class="count-products" id="contador-productos">0
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -187,6 +197,7 @@
                 </div>
             </div>
         </section>
+        <section class="bloque seis" id="seis"></section>
         <section id="checkboxProductos"></section>
         <section id="serSocio"></section>
         <section id="carritoCompras"></section>

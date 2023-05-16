@@ -67,7 +67,7 @@ let direcciones = [
     },
     {
         lugar: "PROVINCIA DE BUENOS AIRES",
-        mapa: 'https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d105032.1099289019!2d-58.69499071328549!3d-34.64830201189187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scaba%20de%20vino%20en%20provincia%20de%20buenos%20aires!5e0!3m2!1ses!2sar!4v1683828725633!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+        mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d673484.87431859!2d-58.60941435499176!3d-35.18518291944185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e864ea4fa487%3A0x285c0d22b1f63fc3!2sVinoteca%2045!5e0!3m2!1ses!2sar!4v1684164509021!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
     },
     {
         lugar: "MENDOZA",
@@ -76,10 +76,27 @@ let direcciones = [
 ]
 let cartInfo = document.querySelector(".cart-product")
 let rowProduct = document.querySelector(".row-product")
-let allProducts = [] //aca se van a agregar todos los productos que se agreguen al carrito
 let carritoCompras = document.getElementById("carritoCompras")
 let valorTotal = document.querySelector(".total-pagar")
 let contadorProductos = document.getElementById("contador-productos")
+let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
+let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
+let modalLogin = document.getElementById("loginIcono")
+            modalLogin.addEventListener("click", function (e) {
+                e.preventDefault();
+                let modalLogin = document.getElementById("modalLogin");
+                modalLogin.style.display = "flex";
+                let closeBtnLogin = document.getElementById("closeLogin");
+                closeBtnLogin.addEventListener("click", function () {
+                    modalLogin.style.display = "none";
+                    location.reload()
+                });
+            });
+let botonLogin = document.getElementById("botonLogin")
+botonLogin.addEventListener("submit", function(e){
+    modalLogin.style.display = "none";
+})
+
 
 var botonesNav = document.getElementsByClassName("nav-link")
 for (var i = 0; i < botonesNav.length; i++) {
@@ -199,6 +216,7 @@ function mostrarPage(id) {
             pagInicio.style.display = "flex"
             display(giftCard)
             break;
+
         case "eventos":
             carruselInicio.style.display = "none"
             carruselVino.style.display = "none"
@@ -246,14 +264,14 @@ function mostrarPage(id) {
                             <h1>CONTACTA CON NOSOTROS</h1>
                             <div class="formulario_dos">
                               <label for="nombre"></label>
-                              <input type="text" name="nombre" placeholder="Nombre">
+                              <input type="text" name="nombre" placeholder="Nombre" required>
                               <label for="email"></label>
-                              <input type="email" name="email" placeholder="E-mail">
+                              <input type="email" name="email" placeholder="E-mail" required>
                               <label for="text"></label>
                               <textarea name="message" placeholder="Mensaje"></textarea>
                               <button id="content" type="submit">Enviar</button>
                             </div>
-                          </form>
+                        </form>
 
                     </div>
                     <div class="app">
@@ -263,6 +281,7 @@ function mostrarPage(id) {
                 </div>
                 <div class="sucursalM">
                     <div class="mapa" id="mapa">
+
 
                     </div>
                     <div class="sucursal">
@@ -276,19 +295,25 @@ function mostrarPage(id) {
                         </ul>
                     </div>
                 </div>
-                <div id="modal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>¡Gracias por comunicarte con nosotros!</p>
-              </div>
-            </div>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span id="close">&times;</span>
+                        <p>¡Gracias por comunicarte con nosotros!</p>
+                    </div>
+                </div>
             </section>
             `
-            document.getElementById("formContactanos").addEventListener("submit", function (e) {
-                e.preventDefault()
-                console.log(e.target.id);
-                //agregamos la funcion del modal
-            })
+            let form = document.getElementById("formContactanos");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                let modal = document.getElementById("myModal");
+                modal.style.display = "block";
+                let closeBtn = document.getElementById("close");
+                closeBtn.addEventListener("click", function () {
+                    modal.style.display = "none";
+                    location.reload()
+                });
+            });
 
             document.getElementById("mapa").innerHTML = `
             <aside>
@@ -296,7 +321,6 @@ function mostrarPage(id) {
             </aside>
             `
             let lugares = document.querySelectorAll(".lugar")
-            console.log(lugares);
             for (var i = 0; i < lugares.length; i++) {
                 lugares[i].addEventListener("click", function (e) {
                     displayMapa(e.target.innerHTML)
@@ -331,9 +355,11 @@ function mostrarPage(id) {
                         
                     </div>
 				</div>
-                        <div class="eresSocio">
+                        <div class="eresSocio" id="eresSocio">
                             <label class="codigoDescuento">¿Eres Socio? Ingresa tu código de descuento</label>
-                            <input type="text" placeholder="000-000-0000">
+                            
+                                    <input type="number" id="codigoSocio" placeholder="000-000-0000">
+
                            <p class="descuentoSocio">Con el codigo de socio tendras un 15% de descuento del total en tu compra</p>
                         </div>
                     </div>
@@ -341,34 +367,51 @@ function mostrarPage(id) {
             <div class="carritoDos">
                     <div class="pagar">
                         <div class="total">
-                            <h1 class="totalPago">TOTAL A PAGAR $</h1>
+                            <div id="totalDescuento">
+                                <h1 class="totalPago">TOTAL A PAGAR $ </h1>
+                            </div>
                             <label for="email"></label>
                             <input type="email" name="email" placeholder="E-mail">
                             <p class="facturaCorreo">A este correo se enviara la factura y detalles de su envío.</p>
                         </div>
-                        <div class="datosTDC">
-                            <img src="./imagenes/Screenshot 2023-04-06 23.05.39.png" alt="">
+                        <div class="datosTDC" id="datosTDC">
+                            <form class="form" id="datosCarrito">
+                            <img src="#" alt="">
                             <label for="nombre"></label>
-                            <input type="text" name="nombre" placeholder="0000-0000-0000-0000">
+                            <input type="text" name="nombre" placeholder="0000-0000-0000-0000" required>
                             <label for="nombre"></label>
-                            <input type="text" name="nombre" placeholder="Nombre">
+                            <input type="text" name="nombre" placeholder="Nombre" required>
                             <label for="date"></label>
-                            <input type="text" name="date" placeholder="Fecha">
+                            <input type="text" name="date" placeholder="Fecha" required>
                             <label for="text"></label>
-                            <input type="text" name="text" placeholder="CVC">
-                            <button id="content" type="submit">Pagar</button>
+                            <input type="text" name="text" placeholder="CVC" required>
+                            <button id="content" type="submit">Enviar</button>
+                            </form>
+                            <div id="Modalito" class="modal">
+                                <div class="modal-content">
+                                    <span id="Carrito">&times;</span>
+                                    <p>¡Gracias por tu compra!</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="modal" class="modal">
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>¡Gracias por comunicarte con nosotros!</p>
-              </div>
-            </div>
+                
         </section>
             `
             carrito()
+            let formSocio = document.getElementById("datosTDC");
+            formSocio.addEventListener("submit", function(event) {
+                event.preventDefault();
+                let modalSocio = document.getElementById("Modalito");
+                modalSocio.style.display = "flex";
+                let closeBtnSocio = document.getElementById("Carrito");
+                closeBtnSocio.addEventListener("click", function () {
+                modalSocio.style.display = "none";
+                location.reload()
+                });
+            });
+
             break;
         case "socio":
             carruselInicio.style.display = "none"
@@ -395,24 +438,32 @@ function mostrarPage(id) {
              <section>
                 <div class="form-uno">
                     <div class="formulario">
-                        <form class="form">
+                        <form class="form" id="datosDelCarrito">
                             <h1>ESTAS A UN CLICK DE VIVIR ESTA ESPERIENCIA</h1>
                             <div class="formulario_dos">
                                 <label for="nombre"></label>
-                                <input type="text" name="nombre" placeholder="Nombre">
+                                <input type="text" name="nombre" placeholder="Nombre" required>
                                 <label for="documento"></label>
-                                <input type="documento" name="documento" placeholder="Número de DNI">
+                                <input type="documento" name="documento" placeholder="Número de DNI" required>
                                 <label for="tel"></label>
-                                <input type="tel" name="telefono" placeholder="Número de teléfono">
+                                <input type="tel" name="telefono" placeholder="Número de teléfono" required>
                                 <label for="email"></label>
-                                <input type="email" name="email" placeholder="E-mail">
+                                <input type="email" name="email" placeholder="E-mail" required>
                                 <div class="plan">
-                                    <p><input type="radio" name="opcionUno">Plan Mensual $20.000</p>
-                                    <p><input type="radio" name="opcionUno">Plan Anual $180.000</p>
+                                    <p><input type="radio" name="opcionUno" required>Plan Mensual $20.000</p>
+                                    <p><input type="radio" name="opcionUno" required>Plan Anual $180.000</p>
                                 </div>
                                 <button id="content" type="submit">Pagar</button>
-                            </div>
+                            </div>  
                         </form>
+                            <div id="myModalito" class="modal">
+                                <div class="modal-contentSocio">
+                                    <span id="closeCarrito">&times;</span>
+                                    <p>¡Bienvenid@!</p>
+                                    <p>Ya eres parte de nuestros exclusivos socios</p>
+                                    <p>Nos vamos a comunicar contigo para continuar con el pago</p>
+                                </div>
+                            </div>
                     </div>
                         <div class="imagenForm">
                             <img src="../imagenes/socioUno.jpg" alt="">
@@ -451,9 +502,21 @@ function mostrarPage(id) {
                     </div>
                 </div>
             </section>
-    </section>
         </div>
+    </section>
+
             `
+            let formCarrito = document.getElementById("datosDelCarrito");
+            formCarrito.addEventListener("submit", function(event) {
+                event.preventDefault();
+                let modalSocio = document.getElementById("myModalito");
+                modalSocio.style.display = "flex";
+                let closeBtnCarrito = document.getElementById("closeCarrito");
+                closeBtnCarrito.addEventListener("click", function () {
+                modalSocio.style.display = "none";
+                location.reload()
+                });
+            });
             break;
 
         default:
@@ -487,11 +550,11 @@ function display(array) {
     for (var i = 0; i < array.length; i++) {
         tarjetasHTML += `
         <div class="card">
-            <img src="../imagenes/${array[i].image}" class="img-car" alt="">
+            <img src="${array[i].image}" class="img-car" alt="">
             <p class="tituloCard">${array[i].name}</p>
             <div class="detalles">
                 <p class="precioDetalle">$${array[i].price}</p>
-                <a href="#">Detalles</a>
+                <a class="detalles"  href="#" id="detalles">Detalles</a>
             </div>
             <button class="add-cart">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
         </div>
@@ -500,119 +563,168 @@ function display(array) {
     pagInicio.innerHTML = tarjetasHTML
 }
 
-// Carrito de compras, las variables se declararon arriba en la global
-pagInicio.addEventListener("click", e => {
 
+// botonDetalles.addEventListener("click", function (detallesID){
+//     let tarjetaDetalles = "";
+//     for (var i = 0; i < details.length; i++) {
+//         tarjetaDetalles += `
+//         <h1 class="t-detalle">DETALLES</h1>
+//         <div class="detallesDos">
+//             <div class="detalle-producto">
+//                 <div class="img-product">
+//                     <img src="${detallesID[i].image}" alt="">
+//                 </div>
+//                 <div class="detalles-producto">
+//                     <ul>
+//                         <li>TIPO: Whisky</li>
+//                         <li>AÑO: 18 Años</li>
+//                         <li>CAPACIDAD: 750ml</li>
+//                         <li>DESCRIPCIÓN: El Dalmore Single Malt 18 años es un whisky de malta escocés de las
+//                             Highlands, envejecido durante 18 años en barricas de jerez y bourbon. Este whisky se
+//                             caracteriza por tener un sabor rico y afrutado, con notas de naranja, caramelo y
+//                             chocolate oscuro. En nariz, presenta aromas a cítricos y especias, con notas de
+//                             vainilla y roble tostado.</li>
+//                         <li>MARIDAJE: En boca, es suave y sedoso, con sabores intensos de frutas maduras,
+//                             caramelo y especias. El final es largo y complejo, con notas de chocolate oscuro y
+//                             cítricos.</li>
+//                     </ul>
+//                 </div>
+//             </div>
+//             <div class="clasificacion">
+//                 <h1>NOMBRE DEL PRODUCTO</h1>
+//                 <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+//                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+//                         class="fa-solid fa-star-half"></i></p>
+//                 <p>PRECIO $ 125.000</p>
+//                 <button class="add-cart">Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button>
+//                 <p class="calificar">Califica este producto</p>
+//                 <p><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
+//                         class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
+//                         class="fa-regular fa-star"></i></p>
+//             </div>
+//         </div>
+//         `
+//         detallesProductos.innerHTML = tarjetaDetalles
+//     }
+// })
+
+// Carrito de compras, las variables se declararon arriba en la global
+
+let allProducts = []; // Array para almacenar los productos del carrito
+contadorProductos = 0; // Contador de productos
+
+// Evento click en pagInicio
+pagInicio.addEventListener("click", e => {
     if (e.target.classList.contains("add-cart")) {
-        let producto = e.target.parentElement // con parentElemen podemos acceder al elemento completo(retrocedemos), en este caso la tarjeta
+        let producto = e.target.parentElement;
         let infProducto = {
             cantidad: 1,
             titulo: producto.querySelector(".tituloCard").textContent,
             precio: producto.querySelector(".precioDetalle").textContent
-        }
+        };
 
-        let siExiste = allProducts.some(
-            producto => producto.titulo === infProducto.titulo)
+        let siExiste = allProducts.some(producto => producto.titulo === infProducto.titulo);
         if (siExiste) {
             let productoRepetido = allProducts.map(producto => {
                 if (producto.titulo === infProducto.titulo) {
-                    producto.cantidad++
-                    return producto
+                    producto.cantidad++;
+                    return producto;
                 } else {
-                    return producto
+                    return producto;
                 }
-            })
+            });
             allProducts = [...productoRepetido];
         } else {
-            allProducts = [...allProducts, infProducto] //de esta manera combinamos estos 2 arrays
-            console.log(infProducto)
-            console.log(allProducts)
+            allProducts = [...allProducts, infProducto];
         }
-
     }
-})
+});
 
-
+// Función para mostrar el carrito
 function carrito() {
     let listaCarrito = "";
-    let totalProductos = 0;
-    for (var i = 0; i < allProducts.length; i++) {
+    for (let i = 0; i < allProducts.length; i++) {
         listaCarrito += `
-        <div class="cardCarrito">
-          <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
-          <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
-          <span class="precio-producto-carrito">${allProducts[i].precio}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-		    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </div>
-          `;
+    <div class="cardCarrito">
+      <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
+      <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
+      <span class="precio-producto-carrito">${allProducts[i].precio}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </div>
+    `;
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
 
-    sumarTotal()
+
+    sumarTotal();
+    //  descuentoAlTotal()
 }
 
+// Función para sumar el total a pagar
 function sumarTotal() {
     let totalPagar = 0;
-    for (var i = 0; i < allProducts.length; i++) {
-      let precio = allProducts[i].precio;
-      precio = parseInt(precio.replace(/\D/g, "")); // Extraer solo los dígitos numéricos
-      totalPagar += (allProducts[i].cantidad) * precio;
+    let totalProductos = 0;
+    for (let i = 0; i < allProducts.length; i++) {
+        let precio = allProducts[i].precio;
+        precio = parseInt(precio.replace(/\D/g, "")); // Extraer solo los dígitos numéricos de un string
+        totalPagar += allProducts[i].cantidad * precio;
+        totalProductos += allProducts[i].cantidad;
     }
     document.getElementById("totalDelCarrito").innerHTML = `
-      <h3>Total:</h3>
-      <span class="total-pagar">$${totalPagar}</span>
-    `;
-    valorTotal = `$${totalPagar}`;
-    contadorProductos = allProducts;
-  }
-  
+    <h3>Total:</h3>
+    <span class="total-pagar">$${totalPagar}</span>
+  `;
+
+    document.getElementById("contador-productos").innerHTML = `
+    <span>${totalProductos}</span>
+  `;
+    contadorProductos += totalProductos;
+
+}
+
+// // Evento keyup para el input del código de socio
+// let codigoSocioConDescuento = document.getElementById("codigoSocio");
+// if (codigoSocioConDescuento) {
+//   codigoSocioConDescuento.addEventListener("keyup", function(e) {
+//     let secuenciaValida = "357";
+//     let input = e.target.value;
+//     if (input.includes(secuenciaValida) && input !== "") {
+//       console.log("Es socio, se aplicará el descuento.");
+//       let descuentoAplicado = totalPagar * 0.15; // Aplicar descuento del 15%
+//       let totalPagarConDescuento = totalPagar - descuentoAplicado;
+//       console.log(`Total a pagar con descuento: ${totalPagarConDescuento}`);
+//       } else {
+//       console.log("No es socio, no se aplicará el descuento.");
+//       }
+//       });
+//       }
+
+//       // Función para aplicar el descuento al total
+//       function descuentoAlTotal() {
+//       if (valorTotal > 0 && input === true) {
+//       codigoSocio = valorTotal * 100 / 15;
+//       }
+//       }
 
 
-  
-  
 
-// anterior funcion
-// function sumarTotal(){
-//     let totalPagar = 0;
-//     for (var i = 0; i < allProducts.length; i++){
-//     totalPagar += `
-//         <h3>Total:</h3>
-//         <span class="total-pagar">$${(allProducts.cantidad) * parseInt(allProducts[i].precio)}</span>
-//     `
-//     }
-//     document.getElementById("totalDelCarrito").innerHTML = totalPagar
-//     valorTotal = `$${totalPagar}` 
-//     contadorProductos= allProducts
-// }
-   
+// let numeros = [1,2,3,4,5,6,7,8,9,0];
+// let secuenciaValida = "357"
+// function codigoValido(numeros, secuenciaValida){
+//     let cadena = numeros.join('')
+//     codigoSocioConDescuento.addEventListener("keyup", function(e){ 
 
-
-
-
-
-
-// FUNCION PARA EL MODAL
-// let form = document.querySelector("form")
-// const modal = document.querySelector('#modal')
-// const cerrar = document.querySelector('.close')
-// form.addEventListener("submit", (event) => {
-//     actionForm(event)
-//     modal.style.display = "block"
-// })
-
-// function modalForm() {
-//     modal.style.display = "none";
-//     location.reload()
-// }
-// cerrar.addEventListener("click", modalForm);
-
-// window.addEventListener("click", (event) => {
-//     if (event.target == modal) {
-//         modal.style.display = "none"
+//     if(cadena.includes(secuenciaValida)){
+//          console.log("es socio, 15% de descuento")
+//     }else{
+//         console.log("no es es socio, no tiene 15% de descuento")
 //     }
 // })
+// console.log(codigoSocioConDescuento)
+// }
+
 
 let busquedaSearch = document.getElementById("inputSearch")
 busquedaSearch.addEventListener("keyup", function (e) {
@@ -651,64 +763,43 @@ function checkboxListener() {
     }
 }
 
-function filtrosCombinados() {
-    var filtrado = []
-    if (buscar !== "" && checkedCheckboxes.length > 0) {
-        checkedCheckboxes.map(category => filtrado.push(...arrayFiltro.filter(evento =>
-            evento.name.toLowerCase().trim().includes(buscar) && evento.category === category)
-        ))
-    }
-    else if (buscar !== "" && checkedCheckboxes.length == 0) {
-        filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().trim().includes(buscar))
-    }
-    else if (buscar === "" && checkedCheckboxes.length > 0) {
-        checkedCheckboxes.map(category =>
-            filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
-        )
-    }
-    else {
-        filtrado = arrayFiltro
-    }
-    filtrado.length > 0 ?
-        display(filtrado) :
-        pagInicio.innerHTML = `
-    <div class="ceroResultado">
-    <h1 class="sinEventos" >No se encontró el producto buscado...</h1>
-    </div>
-    `
+function filtrarPorBusqueda(texto, filtro) {
+    const textoNormalizado = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const filtroNormalizado = filtro.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+    return textoNormalizado.toLowerCase().includes(filtroNormalizado.toLowerCase());
 }
 
-// let separador = location.buscar.split("?time=")
-// function rutasPages() {
-//     switch (time[1]) {
-//         case "nosotros":
-//             mostrarPage("nosotros")
-//             break;
-//         case "vinos":
-//             mostrarPage("vinos")
-//             break;
-//         case "whisky":
-//             mostrarPage("whisky")
-//             break;
-//         case "cerveza":
-//             mostrarPage("cerveza")
-//             break;
-//         case "giftcard":
-//             mostrarPage("giftcard")
-//             break;
-//         case "eventos":
-//             mostrarPage("eventos")
-//             break;
-//         case "recorridos":
-//             mostrarPage("recorridos")
-//             break;
-//         case "contactanos":
-//             mostrarPage("contactanos")
-//             break;
-//         case "socio":
-//             mostrarPage("socio")
-//             break;
-//         default:
-//             mostrarPage("inicio")
-//     }
-// }
+function filtrosCombinados() {
+    var filtrado = [];
+
+    if (buscar !== "" && checkedCheckboxes.length > 0) {
+        checkedCheckboxes.forEach(category => {
+            filtrado.push(...arrayFiltro.filter(evento =>
+                filtrarPorBusqueda(evento.name, buscar) && evento.category === category
+            )
+            );
+        });
+    } else if (buscar !== "" && checkedCheckboxes.length === 0) {
+        filtrado = arrayFiltro.filter(evento =>
+            filtrarPorBusqueda(evento.name, buscar)
+        );
+    } else if (buscar === "" && checkedCheckboxes.length > 0) {
+        checkedCheckboxes.forEach(category => {
+            filtrado.push(
+                ...arrayFiltro.filter(evento => evento.category === category)
+            );
+        });
+    } else {
+        filtrado = arrayFiltro;
+    }
+
+    filtrado.length > 0
+        ? display(filtrado)
+        : (pagInicio.innerHTML = `
+          <div class="ceroResultado">
+            <h1 class="sinEventos">No se encontró el producto buscado...</h1>
+          </div>
+        `);
+}
+
