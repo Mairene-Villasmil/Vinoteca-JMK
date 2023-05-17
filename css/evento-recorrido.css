@@ -116,3 +116,27 @@ section h1{
 .card .soloSocio{
     color: red;
 }
+
+
+@media screen and (max-width: 689px) {
+    .imagenCarrusel {
+        width: 100vw;
+        height: 25vh;
+    }
+
+    .slide img {
+        width: 120px;
+        height: 100px;
+        margin: 15px;
+    }
+
+    section h1{
+        text-align: center;
+        font-size: 35px;
+        margin: 5px;
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 1024px) {
+    
+}

@@ -50,7 +50,7 @@ nav {
     height: 13vh;
 }
 
-.botones a{
+.botones a {
     text-decoration-line: none;
     font-size: 18px;
     font-weight: bolder;
@@ -66,7 +66,7 @@ nav {
     margin: 0px 25px 10px 0px;
 }
 
-.container-icon{
+.container-icon {
     position: relative;
 }
 
@@ -135,7 +135,7 @@ nav {
     display: block;
 }
 
-.loginIcono{
+.loginIcono {
     cursor: pointer;
 }
 
@@ -181,7 +181,7 @@ main {
     max-width: 400px;
 }
 
-.modal-content p{
+.modal-content p {
     font-size: 20px;
     text-align: center;
     font-weight: bolder;
@@ -281,15 +281,15 @@ footer {
     margin: 10px 20px 0px 0px;
 }
 
-.copy{
+.copy {
     display: flex;
     flex-direction: column;
     justify-content: right;
     align-items: flex-end;
 }
 
-.copy a{
-    font-weight: 16px;
+.copy a {
+    font-size: 16px;
     font-weight: bold;
     margin-right: 20px;
     color: black;
@@ -315,7 +315,7 @@ footer {
     max-width: 400px;
 }
 
-.modal-content p{
+.modal-content p {
     font-size: 20px;
     text-align: center;
     font-weight: bolder;
@@ -338,3 +338,54 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 689px) {
+    header {
+        height: 15vh;
+    }
+
+    .search{
+        display: none;
+    }
+    
+    .imagen img {
+        width: 90px;
+        height: 4vh;
+    }
+
+    .whatsappB img {
+        width: 40px;
+    }
+
+    .instagram,
+    .facebook,
+    .whatsapp {
+        margin: 5px;
+        font-size: 25px;
+        padding: 9px;
+    }
+
+    .iconos .instagram:hover {
+        font-size: 28px;
+    }
+    
+    .iconos .facebook:hover {
+        font-size: 28px;
+    }
+    
+    .iconos .whatsapp:hover {
+        font-size: 28px;
+    }
+
+    .copyright {
+        font-size: 11px;
+        margin: 5px;
+    }
+
+    .copy a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 1000px) {}

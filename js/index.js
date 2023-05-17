@@ -83,19 +83,16 @@ let codigoSocio = document.getElementById("totalDescuento") //es para poner el v
 let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
 let modalLogin = document.getElementById("loginIcono")
             modalLogin.addEventListener("click", function (e) {
-                e.preventDefault();
+               
                 let modalLogin = document.getElementById("modalLogin");
                 modalLogin.style.display = "flex";
+                e.preventDefault();
                 let closeBtnLogin = document.getElementById("closeLogin");
                 closeBtnLogin.addEventListener("click", function () {
                     modalLogin.style.display = "none";
                     location.reload()
                 });
             });
-let botonLogin = document.getElementById("botonLogin")
-botonLogin.addEventListener("submit", function(e){
-    modalLogin.style.display = "none";
-})
 
 
 var botonesNav = document.getElementsByClassName("nav-link")
@@ -261,8 +258,8 @@ function mostrarPage(id) {
                 <div class="formApp">
                     <div class="formulario">
                         <form class="form" id="formContactanos">
-                            <h1>CONTACTA CON NOSOTROS</h1>
-                            <div class="formulario_dos">
+                            <h1 class="contactanosTitulo">CONTACTA CON NOSOTROS</h1>
+                            <div class="formulario_Contacto">
                               <label for="nombre"></label>
                               <input type="text" name="nombre" placeholder="Nombre" required>
                               <label for="email"></label>
@@ -280,7 +277,7 @@ function mostrarPage(id) {
                     </div>
                 </div>
                 <div class="sucursalM">
-                    <div class="mapa" id="mapa">
+                    <div class="mapa map-responsive" id="mapa">
 
 
                     </div>
@@ -425,15 +422,12 @@ function mostrarPage(id) {
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
-    <section>
+    <section class="serSocio">
             <div class="botones-form">
                 <a href="#comoFunciona"><button>Como Funciona</button></a>
                 <a href="#beneficios"><button>Beneficios</button></a>
                 <a href="#suscribirme"><button>Suscribirme</button></a>
             </div>
-        <section class="whatsapp">
-            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
-        </section>
         <div class="bloque cuatro" id="cuatro">
              <section>
                 <div class="form-uno">
@@ -488,9 +482,6 @@ function mostrarPage(id) {
             </section>
             <section id="beneficios">
                 <div class="Funcion">
-                    <div class="regalo-beneficio">
-                        <img src="../imagenes/socioTres.jpg" alt="">
-                    </div>
                     <div class="beneficio">
                         <h1>BENEFICIOS</h1>
                         <ul>
@@ -500,10 +491,16 @@ function mostrarPage(id) {
                             <li>Gastos de envios 100% bonificados a cualquier parte del pais.</li>
                         </ul>
                     </div>
+                    <div class="regalo-beneficio">
+                        <img src="../imagenes/socioTres.jpg" alt="">
+                    </div>
                 </div>
             </section>
         </div>
     </section>
+    <section class="whatsapp">
+            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
+        </section>
 
             `
             let formCarrito = document.getElementById("datosDelCarrito");
@@ -554,14 +551,38 @@ function display(array) {
             <p class="tituloCard">${array[i].name}</p>
             <div class="detalles">
                 <p class="precioDetalle">$${array[i].price}</p>
-                <a class="detalles"  href="#" id="detalles">Detalles</a>
+                <button onClick="{detalle(${array[i].id})}" class="detalles botonCard" id="detalles" value="${array[i].id}" id="detalles">Detalles</button>
             </div>
             <button class="add-cart">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
         </div>
     `
     }
     pagInicio.innerHTML = tarjetasHTML
+
 }
+
+let body = document.getElementById("body")
+let fadeout = document.getElementById("seis")
+let containerDetalles = document.getElementById("containerDetalles")
+
+function detalle(id){
+    fadeout.style.display = "flex"
+    fadeout.style.top = window.scrollY+"px"
+    fadeout.style.left = window.scrollX+"px"
+    body.style.overflow = "hidden"
+    containerDetalles.innerHTML = `
+        
+    <h1>${id}</h1>
+    
+    `
+
+    fadeout.addEventListener("click", function(event){
+        fadeout.style.display = "none"
+        body.style.overflow = "scroll"
+       
+    })
+}
+
 
 
 // botonDetalles.addEventListener("click", function (detallesID){
@@ -656,12 +677,8 @@ function carrito() {
     `;
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-
-
     sumarTotal();
-    //  descuentoAlTotal()
 }
-
 // Función para sumar el total a pagar
 function sumarTotal() {
     let totalPagar = 0;
@@ -676,13 +693,13 @@ function sumarTotal() {
     <h3>Total:</h3>
     <span class="total-pagar">$${totalPagar}</span>
   `;
-
     document.getElementById("contador-productos").innerHTML = `
     <span>${totalProductos}</span>
   `;
     contadorProductos += totalProductos;
-
 }
+
+carrito()
 
 // // Evento keyup para el input del código de socio
 // let codigoSocioConDescuento = document.getElementById("codigoSocio");
@@ -802,4 +819,3 @@ function filtrosCombinados() {
           </div>
         `);
 }
-
