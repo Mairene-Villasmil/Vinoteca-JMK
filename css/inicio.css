@@ -94,6 +94,10 @@
     color: white;
 }
 
+.botonCard:hover{
+    background-color: transparent !important;
+}
+
 #botonLogin {
     width: 100px;
     background-color: transparent;
@@ -102,6 +106,10 @@
     padding: 8px;
     color: white;
     margin-left: 70px;
+}
+
+#botonLogin:hover{
+    background-color: black !important;
 }
 
 #closeLogin {

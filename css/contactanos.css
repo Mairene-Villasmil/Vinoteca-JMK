@@ -60,6 +60,7 @@ textarea{
 }
 
 button[type="submit"] {
+    border: 2px solid black;
     display: block;
     font-size: 18px;
     width: 100px;
@@ -71,7 +72,7 @@ button[type="submit"] {
 }
 
 button:hover{
-    background-color: rgba(83, 139, 136, 0.822);
+    background-color: rgba(83, 139, 136, 0.822) !important;
 }
 
 .modal {

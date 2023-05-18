@@ -75,8 +75,8 @@ let direcciones = [
         mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43890.813249035265!2d-68.87663152123213!3d-32.885394911790314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e091c4d27b735%3A0x4dbe53d1205464cc!2sBodegas%20Y%20Vi%C3%B1edos%20Benedetti!5e0!3m2!1ses!2sar!4v1683828642957!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
     }
 ]
-let cartInfo = document.querySelector(".cart-product")
-let rowProduct = document.querySelector(".row-product")
+
+let busquedaSearch = document.getElementById("inputSearch")
 let carritoCompras = document.getElementById("carritoCompras")
 let valorTotal = document.querySelector(".total-pagar")
 let contadorProductos = document.getElementById("contador-arrayProductos")
@@ -367,7 +367,6 @@ function mostrarPage(id) {
                     <div class="pagar">
                         <div class="total">
                             <div id="totalDescuento">
-                                <h1 class="totalPago">TOTAL A PAGAR $ </h1>
                             </div>
                             <label for="email"></label>
                             <input type="email" name="email" placeholder="E-mail">
@@ -564,26 +563,28 @@ function detalle(id) {
     arrayProducto = arrayProductosApi.filter(producto => producto.id === id);
     if (arrayProducto.length > 0) {
         containerDetalles.innerHTML = ` 
-    <h1 class="t-detalle">DETALLES</h1> 
+ 
         <div class="detallesDos"> 
-            <div class="detalle-arrayProducto"> 
+            <div class="detalle-Producto"> 
                 <div class="img-product"> 
                     <img src="${arrayProducto[0].image}" alt=""> 
-                </div> 
-                    <div class="detalles-arrayProducto"> 
-                        <ul> 
-                            <li>TIPO: ${arrayProducto[0].tipo}</li> 
-                            <li>AÑO: ${arrayProducto[0].date}</li> 
-                            <li>CAPACIDAD: ${arrayProducto[0].capacity}</li> 
-                            <li>DESCRIPCIÃ“N: ${arrayProducto[0].description}</li> 
-                            <li>MARIDAJE: ${arrayProducto[0].winePairing}</li> 
-                        </ul> 
-                    </div> 
-            </div> 
-                <div class="clasificacion"> 
+                </div>
+                <div class="t-detalle">
                     <h1>${arrayProducto[0].name}</h1> 
+                </div>  
+            </div> 
+            <div class="detalles-arrayProducto"> 
+                <ul class="lista-detalles"> 
+                    <li>TIPO: ${arrayProducto[0].tipo}</li> 
+                    <li>AÑO: ${arrayProducto[0].date}</li> 
+                    <li>CAPACIDAD: ${arrayProducto[0].capacity}</li> 
+                    <li>DESCRIPCIÓN: ${arrayProducto[0].description}</li> 
+                    <li>MARIDAJE: ${arrayProducto[0].winePairing}</li> 
+                </ul> 
+                <div class="precioProducto"> 
                     <p>PRECIO $${arrayProducto[0].price}</p> 
-                </div> 
+                </div>
+            </div>      
         </div> 
  `;
     }
@@ -593,9 +594,7 @@ function detalle(id) {
     })
 }
 
-
 let allProducts = []; // Array para almacenar los productos del carrito
-
 // Evento click en pagInicio
 pagInicio.addEventListener("click", e => {
   if (e.target.classList.contains("add-cart")) {
@@ -632,9 +631,9 @@ function carrito() {
       <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
       <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
       <span class="precio-producto-carrito">${allProducts[i].precio}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
     </div>
     `;
   }
@@ -642,6 +641,8 @@ function carrito() {
 
   sumarTotal();
 }
+
+
 
 // Función para sumar el total a pagar
 function sumarTotal() {
@@ -657,7 +658,7 @@ function sumarTotal() {
     <h3>Total:</h3>
     <span class="total-pagar">$${totalPagar}</span>
   `;
-  let valorTotal = `$${totalPagar}`;
+  let valorTotal = `$`;
 
   document.getElementById("contador-productos").innerHTML = `
     <span>${totalProductos}</span>
@@ -665,98 +666,21 @@ function sumarTotal() {
   contadorProductos += totalProductos;
 }
 
-// // Evento keyup para el input del código de socio
-// let codigoSocioConDescuento = document.getElementById("codigoSocio");
-// if (codigoSocioConDescuento) {
-//   codigoSocioConDescuento.addEventListener("keyup", function(e) {
-//     let secuenciaValida = "357";
-//     let input = e.target.value;
-//     if (input.includes(secuenciaValida) && input !== "") {
-//       console.log("Es socio, se aplicará el descuento.");
-//       let descuentoAplicado = totalPagar * 0.15; // Aplicar descuento del 15%
-//       let totalPagarConDescuento = totalPagar - descuentoAplicado;
-//       console.log(`Total a pagar con descuento: ${totalPagarConDescuento}`);
-//     } else {
-//       console.log("No es socio, no se aplicará el descuento.");
-//     }
-//   });
-// }
+let eliminarProducto = document.getElementsByClassName("icon-close")
+eliminarProducto.addEventListener("click", function(e){
+    if (e.target.classList.contains('icon-close')) {
+		const product = e.target.parentElement;
+		const title = product.querySelector('p').textContent;
 
-// // Función para aplicar el descuento al total
-// function descuentoAlTotal() {
-//   let descuentoQuince = [];
-//   if (valorTotal > 0 && input === true) {
-//     codigoSocio = valorTotal * 100 / 15;
-//   }
-// }
+		allProducts = allProducts.filter(
+			product => product.title !== title
+		);
 
-// let allProducts = [];
-// contadorProductos = 0;
-
-// pagInicio.addEventListener("click", e => {
-//     if (e.target.classList.contains("add-cart")) {
-//         let arrayProducto = e.target.parentElement;
-//         let infProducto = {
-//             cantidad: 1,
-//             titulo: arrayProducto.querySelector(".tituloCard").textContent,
-//             precio: arrayProducto.querySelector(".precioDetalle").textContent
-//         };
-//         let siExiste = allProducts.some(arrayProducto => arrayProducto.titulo === infProducto.titulo);
-//         if (siExiste) {
-//             let arrayProductoRepetido = allProducts.map(arrayProducto => {
-//                 if (arrayProducto.titulo === infProducto.titulo) {
-//                     arrayProducto.cantidad++;
-//                     return arrayProducto;
-//                 } else {
-//                     return arrayProducto;
-//                 }
-//             });
-//             allProducts = [...arrayProductoRepetido];
-//         } else {
-//             allProducts = [...allProducts, infProducto];
-//         }
-//     }
-// });
+		console.log(allProducts);
+	}
+});
 
 
-// function carrito() {
-//     let listaCarrito = "";
-//     for (let i = 0; i < allProducts.length; i++) {
-//         listaCarrito += `
-//     <div class="cardCarrito">
-//       <span class="cantidad-arrayProducto-carrito">${allProducts[i].cantidad}</span>
-//       <p class="titulo-arrayProducto-carrito">${allProducts[i].titulo}</p>
-//       <span class="precio-arrayProducto-carrito">${allProducts[i].precio}</span>
-//       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-//         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-//       </svg>
-//     </div>
-//     `;
-//     }
-//     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-//     sumarTotal();
-// }
-
-// function sumarTotal() {
-//     let totalPagar = 0;
-//     let totalProductos = 0;
-//     for (let i = 0; i < allProducts.length; i++) {
-//         let precio = allProducts[i].precio;
-//         precio = parseInt(precio.replace(/\D/g, ""));
-//         totalPagar += allProducts[i].cantidad * precio;
-//         totalProductos += allProducts[i].cantidad;
-//     }
-//     document.getElementById("totalDelCarrito").innerHTML = `
-//     <h3>Total:</h3>
-//     <span class="total-pagar">$${totalPagar}</span>
-//   `;
-//     document.getElementById("contador-arrayProductos").innerHTML = `
-//     <span>${totalProductos}</span>
-//   `;
-//     contadorProductos += totalProductos;
-// }
-
-let busquedaSearch = document.getElementById("inputSearch")
 busquedaSearch.addEventListener("keyup", function (e) {
     var datoInput = e.target.value
     buscar = datoInput.trim().toLowerCase()
