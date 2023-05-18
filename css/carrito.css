@@ -52,16 +52,17 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 15px 0px;
 }
 
 .titulo-producto-carrito {
-    width: 55%;
+    width: 50% !important;
     font-size: 20px;
     text-align: left;
 }
 
 .precio-producto-carrito {
-    width: 30%;
+    width: 25% !important;
     font-weight: 700;
     font-size: 20px;
     margin-left: 10px;
@@ -69,12 +70,13 @@
 
 .cantidad-producto-carrito {
     text-align: left;
-    width: 15%;
+    width: 15% !important;
     font-weight: 400;
     font-size: 20px;
 }
 
 .icon-close {
+    width: 10% !important;
     width: 25px;
     height: 25px;
 }
@@ -111,6 +113,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 40px;
 }
 
 .carritoDos {
@@ -331,7 +334,7 @@ button:hover {
 
 }
 
-@media screen and (min-width: 690px) and (max-width: 1024px) {
+/* @media screen and (min-width: 690px) and (max-width: 1024px) {
     .descuentoSocio,
     .codigoDescuento{
         text-align: right;
@@ -346,4 +349,4 @@ button:hover {
     .cart-total span{
         font-size: 20px;
     }
-}
+} */

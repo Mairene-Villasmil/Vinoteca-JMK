@@ -1,33 +1,32 @@
 async function infoVinoteca() {
     let dataApi
-    let productosApi
     await fetch("./js/JMK.JSON")
         .then(response => response.json())
         .then(json => dataApi = json)
 
-    productosApi = dataApi.productos
-    mostrarPage()
+    arrayProductosApi = dataApi.productos
 
-    for (var i = 0; i < productosApi.length; i++) {
-        if (productosApi[i].tipo === "Vino") {
-            vinos.push(productosApi[i])
+    mostrarPage()
+    for (var i = 0; i < arrayProductosApi.length; i++) {
+        if (arrayProductosApi[i].tipo === "Vino") {
+            vinos.push(arrayProductosApi[i])
         } else
-            if (productosApi[i].tipo === "Whisky") {
-                whisky.push(productosApi[i])
+            if (arrayProductosApi[i].tipo === "Whisky") {
+                whisky.push(arrayProductosApi[i])
             } else
-                if (productosApi[i].tipo === "Cerveza") {
-                    cerveza.push(productosApi[i])
+                if (arrayProductosApi[i].tipo === "Cerveza") {
+                    cerveza.push(arrayProductosApi[i])
                 } else
-                    if (productosApi[i].tipo === "Gift Card") {
-                        giftCard.push(productosApi[i])
+                    if (arrayProductosApi[i].tipo === "Gift Card") {
+                        giftCard.push(arrayProductosApi[i])
                     } else
-                        if (productosApi[i].tipo === "Oferta") {
-                            oferta.push(productosApi[i])
+                        if (arrayProductosApi[i].tipo === "Oferta") {
+                            oferta.push(arrayProductosApi[i])
                         } else
-                            if (productosApi[i].tipo === "Eventos") {
-                                eventos.push(productosApi[i])
+                            if (arrayProductosApi[i].tipo === "Eventos") {
+                                eventos.push(arrayProductosApi[i])
                             } else {
-                                recorridos.push(productosApi[i])
+                                recorridos.push(arrayProductosApi[i])
                             }
     }
 
@@ -35,6 +34,8 @@ async function infoVinoteca() {
 }
 infoVinoteca()
 
+let arrayProductosApi
+let productos
 let pagInicio = document.getElementById("uno")
 let arrayFiltro = []
 let vinos = []
@@ -78,21 +79,21 @@ let cartInfo = document.querySelector(".cart-product")
 let rowProduct = document.querySelector(".row-product")
 let carritoCompras = document.getElementById("carritoCompras")
 let valorTotal = document.querySelector(".total-pagar")
-let contadorProductos = document.getElementById("contador-productos")
+let contadorProductos = document.getElementById("contador-arrayProductos")
 let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
 let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
 let modalLogin = document.getElementById("loginIcono")
-            modalLogin.addEventListener("click", function (e) {
-               
-                let modalLogin = document.getElementById("modalLogin");
-                modalLogin.style.display = "flex";
-                e.preventDefault();
-                let closeBtnLogin = document.getElementById("closeLogin");
-                closeBtnLogin.addEventListener("click", function () {
-                    modalLogin.style.display = "none";
-                    location.reload()
-                });
-            });
+modalLogin.addEventListener("click", function (e) {
+
+    let modalLogin = document.getElementById("modalLogin");
+    modalLogin.style.display = "flex";
+    e.preventDefault();
+    let closeBtnLogin = document.getElementById("closeLogin");
+    closeBtnLogin.addEventListener("click", function () {
+        modalLogin.style.display = "none";
+        location.reload()
+    });
+});
 
 
 var botonesNav = document.getElementsByClassName("nav-link")
@@ -100,6 +101,7 @@ for (var i = 0; i < botonesNav.length; i++) {
     const elementos = botonesNav[i]
     elementos.addEventListener("click", function (e) {
         mostrarPage(e.target.id)
+        console.log(e.target.id)
     })
 }
 
@@ -138,14 +140,14 @@ function mostrarPage(id) {
                 Con más de 30 años de experiencia en el mercado. En nuestras sucursales ubicadas
                 estratégicamente en distintos puntos del país, nos esforzamos para que usted reciba una
                 cordial
-                atención, adecuado asesoramiento, amplio surtido de productos y excelentes precios.
+                atención, adecuado asesoramiento, amplio surtido de arrayProductos y excelentes precios.
                 Realizamos
-                degustaciones, presentaciones de productos y otras actividades para generar un vínculo con
+                degustaciones, presentaciones de arrayProductos y otras actividades para generar un vínculo con
                 nuestros clientes.
             </p>
         </div>
-    </div>
-</section>
+        </div>
+        </section>
             `
             break;
 
@@ -163,7 +165,7 @@ function mostrarPage(id) {
             busquedaSearch.style.display = "flex"
             pagInicio.style.display = "flex"
             display(vinos)
-            productosVinoteca(vinos)
+            arrayProductosVinoteca(vinos)
             break;
 
         case "whisky":
@@ -180,7 +182,7 @@ function mostrarPage(id) {
             busquedaSearch.style.display = "flex"
             pagInicio.style.display = "flex"
             display(whisky)
-            productosVinoteca(whisky)
+            arrayProductosVinoteca(whisky)
             break;
 
         case "cerveza":
@@ -197,7 +199,7 @@ function mostrarPage(id) {
             busquedaSearch.style.display = "flex"
             pagInicio.style.display = "flex"
             display(cerveza)
-            productosVinoteca(cerveza)
+            arrayProductosVinoteca(cerveza)
             break;
 
         case "giftcard":
@@ -398,14 +400,14 @@ function mostrarPage(id) {
             `
             carrito()
             let formSocio = document.getElementById("datosTDC");
-            formSocio.addEventListener("submit", function(event) {
+            formSocio.addEventListener("submit", function (event) {
                 event.preventDefault();
                 let modalSocio = document.getElementById("Modalito");
                 modalSocio.style.display = "flex";
                 let closeBtnSocio = document.getElementById("Carrito");
                 closeBtnSocio.addEventListener("click", function () {
-                modalSocio.style.display = "none";
-                location.reload()
+                    modalSocio.style.display = "none";
+                    location.reload()
                 });
             });
 
@@ -498,20 +500,16 @@ function mostrarPage(id) {
             </section>
         </div>
     </section>
-    <section class="whatsapp">
-            <a href=""><img src="../imagenes/whatsapp.png" alt=""></a>
-        </section>
-
             `
             let formCarrito = document.getElementById("datosDelCarrito");
-            formCarrito.addEventListener("submit", function(event) {
+            formCarrito.addEventListener("submit", function (event) {
                 event.preventDefault();
                 let modalSocio = document.getElementById("myModalito");
                 modalSocio.style.display = "flex";
                 let closeBtnCarrito = document.getElementById("closeCarrito");
                 closeBtnCarrito.addEventListener("click", function () {
-                modalSocio.style.display = "none";
-                location.reload()
+                    modalSocio.style.display = "none";
+                    location.reload()
                 });
             });
             break;
@@ -534,138 +532,102 @@ function mostrarPage(id) {
 
 function displayMapa(lugar) {
     let funcionDirecciones = direcciones.filter(direccion => direccion.lugar === lugar)
-    console.log(funcionDirecciones)
-    document.getElementById("mapa").innerHTML = `
-    <aside>
-        <iframe src="${funcionDirecciones[0].mapa}"></iframe>
-    </aside>
-    `
+    document.getElementById("mapa").innerHTML = ` 
+    <aside> <iframe src="${funcionDirecciones[0].mapa}"></iframe> </aside> `
 }
 
 function display(array) {
     let tarjetasHTML = "";
     for (var i = 0; i < array.length; i++) {
-        tarjetasHTML += `
-        <div class="card">
-            <img src="${array[i].image}" class="img-car" alt="">
-            <p class="tituloCard">${array[i].name}</p>
-            <div class="detalles">
-                <p class="precioDetalle">$${array[i].price}</p>
-                <button onClick="{detalle(${array[i].id})}" class="detalles botonCard" id="detalles" value="${array[i].id}" id="detalles">Detalles</button>
-            </div>
-            <button class="add-cart">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button>
-        </div>
-    `
+        tarjetasHTML += ` 
+<div class="card"> <img src="${array[i].image}" class="img-car" alt=""> 
+    <p class="tituloCard">${array[i].name}</p> 
+    <div class="detalles"> 
+        <p class="precioDetalle">$${array[i].price}</p> 
+        <button onclick="detalle(${array[i].id})" class="detalles botonCard" id="detalles" value="${array[i].id}" id="detalles">Detalles</button> 
+    </div> 
+    <button class="add-cart">Agregar al Carrito <i class="fa-solid fa-cart-shopping"></i></button> 
+</div> `
     }
     pagInicio.innerHTML = tarjetasHTML
-
 }
 
 let body = document.getElementById("body")
 let fadeout = document.getElementById("seis")
 let containerDetalles = document.getElementById("containerDetalles")
-
-function detalle(id){
+let arrayProducto = []
+function detalle(id) {
     fadeout.style.display = "flex"
-    fadeout.style.top = window.scrollY+"px"
-    fadeout.style.left = window.scrollX+"px"
+    fadeout.style.top = window.scrollY + "px"
+    fadeout.style.left = window.scrollX + "px"
     body.style.overflow = "hidden"
-    containerDetalles.innerHTML = `
-        
-    <h1>${id}</h1>
-    
-    `
-
-    fadeout.addEventListener("click", function(event){
+    arrayProducto = arrayProductosApi.filter(producto => producto.id === id);
+    if (arrayProducto.length > 0) {
+        containerDetalles.innerHTML = ` 
+    <h1 class="t-detalle">DETALLES</h1> 
+        <div class="detallesDos"> 
+            <div class="detalle-arrayProducto"> 
+                <div class="img-product"> 
+                    <img src="${arrayProducto[0].image}" alt=""> 
+                </div> 
+                    <div class="detalles-arrayProducto"> 
+                        <ul> 
+                            <li>TIPO: ${arrayProducto[0].tipo}</li> 
+                            <li>AÑO: ${arrayProducto[0].date}</li> 
+                            <li>CAPACIDAD: ${arrayProducto[0].capacity}</li> 
+                            <li>DESCRIPCIÃ“N: ${arrayProducto[0].description}</li> 
+                            <li>MARIDAJE: ${arrayProducto[0].winePairing}</li> 
+                        </ul> 
+                    </div> 
+            </div> 
+                <div class="clasificacion"> 
+                    <h1>${arrayProducto[0].name}</h1> 
+                    <p>PRECIO $${arrayProducto[0].price}</p> 
+                </div> 
+        </div> 
+ `;
+    }
+    fadeout.addEventListener("click", function (event) {
         fadeout.style.display = "none"
         body.style.overflow = "scroll"
-       
     })
 }
 
 
-
-// botonDetalles.addEventListener("click", function (detallesID){
-//     let tarjetaDetalles = "";
-//     for (var i = 0; i < details.length; i++) {
-//         tarjetaDetalles += `
-//         <h1 class="t-detalle">DETALLES</h1>
-//         <div class="detallesDos">
-//             <div class="detalle-producto">
-//                 <div class="img-product">
-//                     <img src="${detallesID[i].image}" alt="">
-//                 </div>
-//                 <div class="detalles-producto">
-//                     <ul>
-//                         <li>TIPO: Whisky</li>
-//                         <li>AÑO: 18 Años</li>
-//                         <li>CAPACIDAD: 750ml</li>
-//                         <li>DESCRIPCIÓN: El Dalmore Single Malt 18 años es un whisky de malta escocés de las
-//                             Highlands, envejecido durante 18 años en barricas de jerez y bourbon. Este whisky se
-//                             caracteriza por tener un sabor rico y afrutado, con notas de naranja, caramelo y
-//                             chocolate oscuro. En nariz, presenta aromas a cítricos y especias, con notas de
-//                             vainilla y roble tostado.</li>
-//                         <li>MARIDAJE: En boca, es suave y sedoso, con sabores intensos de frutas maduras,
-//                             caramelo y especias. El final es largo y complejo, con notas de chocolate oscuro y
-//                             cítricos.</li>
-//                     </ul>
-//                 </div>
-//             </div>
-//             <div class="clasificacion">
-//                 <h1>NOMBRE DEL PRODUCTO</h1>
-//                 <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-//                         class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-//                         class="fa-solid fa-star-half"></i></p>
-//                 <p>PRECIO $ 125.000</p>
-//                 <button class="add-cart">Agregar al Carrito<i class="fa-solid fa-cart-shopping"></i></button>
-//                 <p class="calificar">Califica este producto</p>
-//                 <p><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
-//                         class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
-//                         class="fa-regular fa-star"></i></p>
-//             </div>
-//         </div>
-//         `
-//         detallesProductos.innerHTML = tarjetaDetalles
-//     }
-// })
-
-// Carrito de compras, las variables se declararon arriba en la global
-
 let allProducts = []; // Array para almacenar los productos del carrito
-contadorProductos = 0; // Contador de productos
 
 // Evento click en pagInicio
 pagInicio.addEventListener("click", e => {
-    if (e.target.classList.contains("add-cart")) {
-        let producto = e.target.parentElement;
-        let infProducto = {
-            cantidad: 1,
-            titulo: producto.querySelector(".tituloCard").textContent,
-            precio: producto.querySelector(".precioDetalle").textContent
-        };
+  if (e.target.classList.contains("add-cart")) {
+    let producto = e.target.parentElement;
+    let infProducto = {
+      cantidad: 1,
+      titulo: producto.querySelector(".tituloCard").textContent,
+      precio: producto.querySelector(".precioDetalle").textContent
+    };
 
-        let siExiste = allProducts.some(producto => producto.titulo === infProducto.titulo);
-        if (siExiste) {
-            let productoRepetido = allProducts.map(producto => {
-                if (producto.titulo === infProducto.titulo) {
-                    producto.cantidad++;
-                    return producto;
-                } else {
-                    return producto;
-                }
-            });
-            allProducts = [...productoRepetido];
+    let siExiste = allProducts.some(producto => producto.titulo === infProducto.titulo);
+    if (siExiste) {
+      let productoRepetido = allProducts.map(producto => {
+        if (producto.titulo === infProducto.titulo) {
+          producto.cantidad++;
+          return producto;
         } else {
-            allProducts = [...allProducts, infProducto];
+          return producto;
         }
+      });
+      allProducts = [...productoRepetido];
+    } else {
+      allProducts = [...allProducts, infProducto];
     }
+  }
 });
 
 // Función para mostrar el carrito
 function carrito() {
-    let listaCarrito = "";
-    for (let i = 0; i < allProducts.length; i++) {
-        listaCarrito += `
+  let listaCarrito = "";
+  for (let i = 0; i < allProducts.length; i++) {
+    listaCarrito += `
     <div class="cardCarrito">
       <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
       <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
@@ -675,31 +637,33 @@ function carrito() {
       </svg>
     </div>
     `;
-    }
-    document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-    sumarTotal();
+  }
+  document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
+
+  sumarTotal();
 }
+
 // Función para sumar el total a pagar
 function sumarTotal() {
-    let totalPagar = 0;
-    let totalProductos = 0;
-    for (let i = 0; i < allProducts.length; i++) {
-        let precio = allProducts[i].precio;
-        precio = parseInt(precio.replace(/\D/g, "")); // Extraer solo los dígitos numéricos de un string
-        totalPagar += allProducts[i].cantidad * precio;
-        totalProductos += allProducts[i].cantidad;
-    }
-    document.getElementById("totalDelCarrito").innerHTML = `
+  let totalPagar = 0;
+  let totalProductos = 0;
+  for (let i = 0; i < allProducts.length; i++) {
+    let precio = allProducts[i].precio;
+    precio = parseInt(precio.replace(/\D/g, "")); // Extraer solo los dígitos numéricos de un string
+    totalPagar += allProducts[i].cantidad * precio;
+    totalProductos += allProducts[i].cantidad;
+  }
+  document.getElementById("totalDelCarrito").innerHTML = `
     <h3>Total:</h3>
     <span class="total-pagar">$${totalPagar}</span>
   `;
-    document.getElementById("contador-productos").innerHTML = `
+  let valorTotal = `$${totalPagar}`;
+
+  document.getElementById("contador-productos").innerHTML = `
     <span>${totalProductos}</span>
   `;
-    contadorProductos += totalProductos;
+  contadorProductos += totalProductos;
 }
-
-carrito()
 
 // // Evento keyup para el input del código de socio
 // let codigoSocioConDescuento = document.getElementById("codigoSocio");
@@ -712,36 +676,85 @@ carrito()
 //       let descuentoAplicado = totalPagar * 0.15; // Aplicar descuento del 15%
 //       let totalPagarConDescuento = totalPagar - descuentoAplicado;
 //       console.log(`Total a pagar con descuento: ${totalPagarConDescuento}`);
-//       } else {
+//     } else {
 //       console.log("No es socio, no se aplicará el descuento.");
-//       }
-//       });
-//       }
-
-//       // Función para aplicar el descuento al total
-//       function descuentoAlTotal() {
-//       if (valorTotal > 0 && input === true) {
-//       codigoSocio = valorTotal * 100 / 15;
-//       }
-//       }
-
-
-
-// let numeros = [1,2,3,4,5,6,7,8,9,0];
-// let secuenciaValida = "357"
-// function codigoValido(numeros, secuenciaValida){
-//     let cadena = numeros.join('')
-//     codigoSocioConDescuento.addEventListener("keyup", function(e){ 
-
-//     if(cadena.includes(secuenciaValida)){
-//          console.log("es socio, 15% de descuento")
-//     }else{
-//         console.log("no es es socio, no tiene 15% de descuento")
 //     }
-// })
-// console.log(codigoSocioConDescuento)
+//   });
 // }
 
+// // Función para aplicar el descuento al total
+// function descuentoAlTotal() {
+//   let descuentoQuince = [];
+//   if (valorTotal > 0 && input === true) {
+//     codigoSocio = valorTotal * 100 / 15;
+//   }
+// }
+
+// let allProducts = [];
+// contadorProductos = 0;
+
+// pagInicio.addEventListener("click", e => {
+//     if (e.target.classList.contains("add-cart")) {
+//         let arrayProducto = e.target.parentElement;
+//         let infProducto = {
+//             cantidad: 1,
+//             titulo: arrayProducto.querySelector(".tituloCard").textContent,
+//             precio: arrayProducto.querySelector(".precioDetalle").textContent
+//         };
+//         let siExiste = allProducts.some(arrayProducto => arrayProducto.titulo === infProducto.titulo);
+//         if (siExiste) {
+//             let arrayProductoRepetido = allProducts.map(arrayProducto => {
+//                 if (arrayProducto.titulo === infProducto.titulo) {
+//                     arrayProducto.cantidad++;
+//                     return arrayProducto;
+//                 } else {
+//                     return arrayProducto;
+//                 }
+//             });
+//             allProducts = [...arrayProductoRepetido];
+//         } else {
+//             allProducts = [...allProducts, infProducto];
+//         }
+//     }
+// });
+
+
+// function carrito() {
+//     let listaCarrito = "";
+//     for (let i = 0; i < allProducts.length; i++) {
+//         listaCarrito += `
+//     <div class="cardCarrito">
+//       <span class="cantidad-arrayProducto-carrito">${allProducts[i].cantidad}</span>
+//       <p class="titulo-arrayProducto-carrito">${allProducts[i].titulo}</p>
+//       <span class="precio-arrayProducto-carrito">${allProducts[i].precio}</span>
+//       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+//         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+//       </svg>
+//     </div>
+//     `;
+//     }
+//     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
+//     sumarTotal();
+// }
+
+// function sumarTotal() {
+//     let totalPagar = 0;
+//     let totalProductos = 0;
+//     for (let i = 0; i < allProducts.length; i++) {
+//         let precio = allProducts[i].precio;
+//         precio = parseInt(precio.replace(/\D/g, ""));
+//         totalPagar += allProducts[i].cantidad * precio;
+//         totalProductos += allProducts[i].cantidad;
+//     }
+//     document.getElementById("totalDelCarrito").innerHTML = `
+//     <h3>Total:</h3>
+//     <span class="total-pagar">$${totalPagar}</span>
+//   `;
+//     document.getElementById("contador-arrayProductos").innerHTML = `
+//     <span>${totalProductos}</span>
+//   `;
+//     contadorProductos += totalProductos;
+// }
 
 let busquedaSearch = document.getElementById("inputSearch")
 busquedaSearch.addEventListener("keyup", function (e) {
@@ -750,7 +763,7 @@ busquedaSearch.addEventListener("keyup", function (e) {
     filtrosCombinados()
 })
 
-function productosVinoteca(array) {
+function arrayProductosVinoteca(array) {
     let categories = array.map(evento => evento.category)
     let unica = new Set(categories)
     let todasLasCategorias = [...unica]
@@ -815,7 +828,7 @@ function filtrosCombinados() {
         ? display(filtrado)
         : (pagInicio.innerHTML = `
           <div class="ceroResultado">
-            <h1 class="sinEventos">No se encontró el producto buscado...</h1>
+            <h1 class="sinEventos">No se encontró el arrayProducto buscado...</h1>
           </div>
         `);
 }

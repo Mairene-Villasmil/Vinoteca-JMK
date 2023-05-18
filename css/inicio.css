@@ -130,13 +130,6 @@ input[type="checkbox"] {
     margin-left: 15px;
 }
 
-p {
-    font-size: 45px;
-    text-align: center;
-    font-weight: bold;
-    margin: 40px 0px;
-}
-
 .cards {
     display: flex;
     flex-direction: row;
@@ -241,8 +234,4 @@ p {
     #botonLogin {
         margin-left: 40px;
     }
-}
-
-@media screen and (min-width: 690px) and (max-width: 1024px) {
-    
 }
