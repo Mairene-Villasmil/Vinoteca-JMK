@@ -64,6 +64,9 @@
 .t-detalle{
     width: 100%;
     height: 20%;
+}
+
+.t-detalle h1{
     font-size: 35px;
 }
 
@@ -78,13 +81,13 @@
 
 .lista-detalles{
     width: 100%;
-    height: 80%;
+    height: fit-content;
     list-style-type: none;
     margin-top: 30px;
 }
 
 .lista-detalles li{
-    font-size: 20px;
+    font-size: 16px;
     line-height: 25px;
     text-align: justify;
     padding-right: 40px;
@@ -94,7 +97,7 @@
 .precioProducto{
     width: 100%;
     height: 15%;
-    font-size: 35px;
+    font-size: 28px;
     margin-top: 10px;
     padding-right: 80px;
     text-align: right;
@@ -111,8 +114,66 @@ button:hover{
     background-color: transparent;
 }
 
-@media screen and (max-width: 689px) {}
+@media screen and (max-width: 689px) {
+    .detallesDos{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-@media screen and (min-width: 690px) and (max-width: 1024px) {
+    .detalle-Producto{
+        width: 100%;
+        height: 30%;
+        flex-direction: row;
+    }
+
+    .img-product{
+        width: 50%;
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     
+    .img-product img{
+        width: 100%;
+        height: 160px;
+        border: black solid 2px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    .t-detalle{
+        width: 50%;
+        height: 10%;
+    }
+    
+    .t-detalle h1{
+        font-size: 25px;
+    }
+    .detalles-arrayProducto{
+        width: 100%;
+        height: 70%;
+    }
+
+    .lista-detalles{
+        width: 100%;
+        height: fit-content;
+        margin-top: 10px;
+    }
+    
+    .lista-detalles li{
+        font-size: 12px;
+        line-height: 18px;
+        padding: 0px 10px;
+    }
+    
+    .precioProducto{
+        width: 100%;
+        height: 10%;
+        font-size: 15px;
+        margin-top: 1px;
+        padding-right: 20px;
+    }
+
 }

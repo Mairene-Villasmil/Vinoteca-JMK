@@ -180,16 +180,6 @@ input[type=password] {
     padding: 0px 15px;
 }
 
-/* .descuentoSocio {
-    font-size: 15px;
-}
-
-.codigoDescuento {
-    font-size: 19px;
-    font-weight: bold;
-    text-align: left;
-} */
-
 button {
     width: 100px;
     background-color: transparent;
@@ -201,19 +191,6 @@ button {
 button:hover {
     background-color: rgba(83, 139, 136, 0.822);
 }
-
-/* .eresSocio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    font-size: 25px;
-    margin-top: 50px;
-}
-
-.eresSocio input {
-    width: 30%;
-} */
 
 .modal {
     display: none;
@@ -340,19 +317,3 @@ button:hover {
 
 }
 
-/* @media screen and (min-width: 690px) and (max-width: 1024px) {
-    .descuentoSocio,
-    .codigoDescuento{
-        text-align: right;
-    }
-
-    .titulo-producto-carrito,
-    .precio-producto-carrito,
-    .cantidad-producto-carrito{
-        font-size: 15px;
-    }
-
-    .cart-total span{
-        font-size: 20px;
-    }
-} */

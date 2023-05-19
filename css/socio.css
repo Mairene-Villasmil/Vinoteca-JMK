@@ -111,7 +111,7 @@ input[type="radio"] {
 }
 
 button #content[type="submit"] {
-    border: 2px solid blac;
+    border: 2px solid black;
     display: block;
     font-size: 18px;
     background-color: transparent;

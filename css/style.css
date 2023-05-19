@@ -3,12 +3,6 @@
     padding: 0px;
 }
 
-/* body{
-    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/803/1006/desktop-wallpaper-white-leather-texture-white-texture.jpg);
-    background-size: 100vw 100%;
-    background-attachment: fixed;
-} */
-
 header {
     width: 100vw;
     height: 30vh;
@@ -20,102 +14,37 @@ header {
 }
 
 nav {
+    height: 11rem;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-}
 
-.botones ul {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-}
-
-.navegacion {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.imagen {
-    width: 30%;
-    margin: 0px 10px;
-}
-
-.imagen img {
-    width: 280px;
-    height: 13vh;
-}
-
-.botones a {
-    text-decoration-line: none;
-    font-size: 18px;
-    font-weight: bolder;
-    color: rgb(255, 255, 255);
-    background-color: black;
-    margin: 20px;
-}
-
-.botones i {
-    cursor: pointer;
-    font-size: 25px;
-    color: white;
-    margin: 0px 25px 10px 0px;
-}
-
-.container-icon {
-    position: relative;
-}
-
-.botones>li {
-    float: left;
-}
-
-.botones li ul {
-    display: none;
-    position: absolute;
-    min-width: 180px;
-}
-
-.botones li:hover>ul {
-    display: block;
-}
-
-.menuD li {
-    line-height: 50px;
-}
-
-.menuD {
-    background-color: black;
-    width: 130px;
-    height: fit-content;
-    color: white;
-    padding: 0px 15px;
-    z-index: 200;
+    z-index: 10;
 }
 
 .login {
+    width: 10%;
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-right: 10px;
 }
 
 .login i {
+    width: 100%;
     background-color: transparent;
     color: white;
     font-size: 30px;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .login ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    margin-left: 0px;
 }
 
 .login li ul {
@@ -139,26 +68,108 @@ nav {
     cursor: pointer;
 }
 
-.search {
+.botones{
     width: 100%;
-    height: 25px;
+}
+
+.botones a {
+    text-decoration-line: none;
+    font-size: 18px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    margin: 20px;
+}
+
+.botones i {
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    margin: 7px 25px 10px 0px;
+}
+
+.container-icon {
+    position: relative;
+}
+
+.botones>li {
+    float: left;
+}
+
+.botones li ul {
+    display: none;
+    position: absolute;
+    min-width: 180px;
+}
+
+.botones li:hover>ul {
+    display: block;
+}
+
+.navegacion {
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: right;
-    margin: 30px 20px;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-#search {
-    width: 400px;
-    height: 30px;
-    border-radius: 5px;
-    margin-top: 8px;
+.imagen {
+    width: 22%;
+    margin: 0px 10px 50px 10px;
 }
 
-main {
+.imagen img {
+    width: 280px;
+    height: 13vh;
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     width: 100%;
-    height: 45%;
-    min-height: 45vh
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: white;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    margin: 0 0 0 10%;
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.hamburger {
+    display: none;
 }
 
 .modal {
@@ -202,6 +213,308 @@ main {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.menuD li {
+    line-height: 50px;
+}
+
+.menuD {
+    background-color: black;
+    width: 130px;
+    height: fit-content;
+    color: white;
+    padding: 0px 15px;
+    z-index: 200;
+    list-style-type: none;
+}
+
+.search {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 30px 20px;
+}
+
+#search {
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 689px) {
+    header {
+        height: 15vh;
+    }
+
+    .imagen {
+        width: 30%;
+        margin: 0px 10px;
+    }
+
+    .hamburger {
+        width: 14%;
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 54%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+
+    .navegacion{
+        height: 100%;
+    }
+
+    .login {
+        width: 4%;
+    }
+
+    .login i{
+        margin-bottom: 20px;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
+        height: 70vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+        margin-top: 19px;
+        left: 0%;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+
+    /*Animating Hamburger Icon on Click*/
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        transition: all 0.7s ease;
+        width: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .imagen img {
+        width: 90px;
+        height: 4vh;
+    }
+
+    .whatsappB img {
+        width: 40px;
+    }
+
+    .instagram,
+    .facebook,
+    .whatsapp {
+        margin: 5px;
+        font-size: 25px;
+        padding: 9px;
+    }
+
+    .iconos .instagram:hover {
+        font-size: 28px;
+    }
+
+    .iconos .facebook:hover {
+        font-size: 28px;
+    }
+
+    .iconos .whatsapp:hover {
+        font-size: 28px;
+    }
+
+    .copyright {
+        font-size: 11px;
+        margin: 5px;
+    }
+
+    .copy a {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 690px) and (max-width: 1150px) {
+    .navegacion {
+        width: 100vw;
+        height: 1vh;
+    }
+
+    .botones{
+        margin-top: 65px;
+    }
+
+    .login {
+        width: 39%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        align-content: flex-start;
+    }
+
+    .login i{
+        margin-bottom: 200px;
+    }
+
+    .imagen img{
+        margin-bottom: 250px;
+    }
+
+    nav {
+        position: fixed;
+        z-index: 3;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 2%;
+        top: 15%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0), rgb(24, 22, 22));
+        height: 67vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+        margin-top: 9px;
+        left: 0%;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+
+    li.fade {
+        opacity: 1;
+    }
+}
+
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+    width: 100%;
+    height: 45%;
+    min-height: 45vh
 }
 
 .whatsappB {
@@ -294,98 +607,3 @@ footer {
     margin-right: 20px;
     color: black;
 }
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background: linear-gradient(to right bottom, #009dff, #ec2f4b);
-    margin: 15% auto;
-    padding-bottom: 20px;
-    border: 1px solid black;
-    width: 80%;
-    max-width: 400px;
-}
-
-.modal-content p {
-    font-size: 20px;
-    text-align: center;
-    font-weight: bolder;
-    color: white;
-}
-
-#close {
-    cursor: pointer;
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: right;
-    margin-right: 10px;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 689px) {
-    header {
-        height: 15vh;
-    }
-
-    .search{
-        display: none;
-    }
-    
-    .imagen img {
-        width: 90px;
-        height: 4vh;
-    }
-
-    .whatsappB img {
-        width: 40px;
-    }
-
-    .instagram,
-    .facebook,
-    .whatsapp {
-        margin: 5px;
-        font-size: 25px;
-        padding: 9px;
-    }
-
-    .iconos .instagram:hover {
-        font-size: 28px;
-    }
-    
-    .iconos .facebook:hover {
-        font-size: 28px;
-    }
-    
-    .iconos .whatsapp:hover {
-        font-size: 28px;
-    }
-
-    .copyright {
-        font-size: 11px;
-        margin: 5px;
-    }
-
-    .copy a {
-        font-size: 14px;
-        margin-bottom: 10px;
-    }
-}
-
-@media screen and (min-width: 690px) and (max-width: 1000px) {}

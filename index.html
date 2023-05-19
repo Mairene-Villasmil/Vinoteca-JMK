@@ -31,6 +31,11 @@
                 <div class="imagen">
                     <a href="./index.html"><img src="./imagenes/logo.png" alt="LOGO"></a>
                 </div>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
                 <div class="login">
                     <ul>
                         <li class="nav-bar nav-link"><i class="fa-solid fa-user"></i>
@@ -40,14 +45,16 @@
                                     <div id="modalLogin" class="modal">
                                         <div class="modal-contentLogin">
                                             <span id="closeLogin">&times;</span>
-                                            <form action="" class="formLogin">
+                                            <form class="formLogin">
                                                 <div class="input">
-                                                <label for="nombre"><i class="fa-solid fa-user"></i></label>
-                                                <input type="text" name="Nombre" placeholder="Nombre de Usuario" required>
+                                                    <label><i class="fa-solid fa-user"></i></label>
+                                                    <input type="text" name="Nombre" placeholder="Nombre de Usuario"
+                                                        required>
                                                 </div>
                                                 <div class="input">
-                                                <label for="password"><i class="fa-solid fa-lock"></i></label>
-                                                <input type="password" name="password" placeholder="Contraseña" required>
+                                                    <label><i class="fa-solid fa-lock"></i></label>
+                                                    <input type="password" name="password" placeholder="Contraseña"
+                                                        required>
                                                 </div>
                                                 <button id="botonLogin" type="submit">Ingresar</button>
                                             </form>
@@ -59,7 +66,7 @@
                     </ul>
                 </div>
                 <div class="botones">
-                    <ul>
+                    <ul class="nav-links">
                         <li class="nav-link"><a href="#" class="nav-bar" id="inicio">INICIO</a></li>
                         <li class="nav-link"><a href="#" class="nav-bar" id="nosotros">NOSOTROS</a></li>
                         <li><a href="#" class="nav-bar prod">PRODUCTOS</a>
@@ -90,7 +97,8 @@
                 </div>
             </div>
         </nav>
-    </header>
+    
+        </header>
     <main id="principal">
         <section class="whatsappB">
             <a href=""><img src="./imagenes/whatsapap.png" alt=""></a>
@@ -145,6 +153,7 @@
                     <a href="#"><img src="../imagenes/carruselWhisky6.png" alt=""></a>
                     <a href="#"><img src="../imagenes/carruselWhisky8.png" alt=""></a>
                 </div>
+            </div>
         </section>
         <section class="imagenCarrusel" id="carruselCerveza">
             <div class="marquee">

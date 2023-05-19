@@ -34,6 +34,46 @@ async function infoVinoteca() {
 }
 infoVinoteca()
 
+
+// const url = "https://firestore.googleapis.com/v1/projects/desarrollo-web-d0b62/databases/(default)/documents/vinotecaJMK";
+
+// fetch(url)
+//   .then(response => response.json())
+//   .then(data => {
+//     // Verificar si hay más páginas
+//     if (data.nextPageToken) {
+//       // Obtener la siguiente página de resultados
+//       return fetch(url + "?pageToken=" + data.nextPageToken);
+//     } else {
+//       // No hay más páginas, procesar los documentos aquí
+//       processDocuments(data.documents);
+//       return null;
+//     }
+//   })
+//   .then(response => {
+//     if (response) {
+//       return response.json();
+//     }
+//     return null;
+//   })
+//   .then(data => {
+//     if (data) {
+//       // Procesar los documentos adicionales de la siguiente página
+//       processDocuments(data.documents);
+//     }
+//   })
+//   .catch(error => {
+//     console.log("Error al obtener los documentos:", error);
+//   });
+
+// function processDocuments(documents) {
+//   // Procesar los documentos aquí
+//   documents.forEach(document => {
+//     console.log(document.fields);
+//   });
+// }
+
+
 let arrayProductosApi
 let productos
 let pagInicio = document.getElementById("uno")
@@ -75,13 +115,31 @@ let direcciones = [
         mapa: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43890.813249035265!2d-68.87663152123213!3d-32.885394911790314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e091c4d27b735%3A0x4dbe53d1205464cc!2sBodegas%20Y%20Vi%C3%B1edos%20Benedetti!5e0!3m2!1ses!2sar!4v1683828642957!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
     }
 ]
-
-let busquedaSearch = document.getElementById("inputSearch")
+let cartInfo = document.querySelector(".cart-product")
+let rowProduct = document.querySelector(".row-product")
 let carritoCompras = document.getElementById("carritoCompras")
 let valorTotal = document.querySelector(".total-pagar")
+let busquedaSearch = document.getElementById("inputSearch")
 let contadorProductos = document.getElementById("contador-arrayProductos")
-let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
-let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
+//let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
+//let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
+let cartEmpty = document.querySelector(".cart-empty")
+let cartTotal = document.querySelector(".cart-total")
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+
 let modalLogin = document.getElementById("loginIcono")
 modalLogin.addEventListener("click", function (e) {
 
@@ -117,6 +175,7 @@ function mostrarPage(id) {
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
             busquedaSearch.style.display = "none"
+            carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
             <section>
@@ -353,6 +412,7 @@ function mostrarPage(id) {
                     <div class="cart-total" id="totalDelCarrito">
                         
                     </div>
+                    <p class="cart-empty"> El carrito esta Vacio</p>
 				</div>
                         <div class="eresSocio" id="eresSocio">
                             <label class="codigoDescuento">¿Eres Socio? Ingresa tu código de descuento</label>
@@ -594,7 +654,9 @@ function detalle(id) {
     })
 }
 
-let allProducts = []; // Array para almacenar los productos del carrito
+let allProducts = [];
+let titulo // Array para almacenar los productos del carrito
+let showHTML
 // Evento click en pagInicio
 pagInicio.addEventListener("click", e => {
   if (e.target.classList.contains("add-cart")) {
@@ -619,21 +681,50 @@ pagInicio.addEventListener("click", e => {
     } else {
       allProducts = [...allProducts, infProducto];
     }
-  }
+}
+
 });
+
+
+let eliminarProducto = document.querySelector(".close")
+// rowProduct esta declarada en la global
+rowProduct.addEventListener('click', e => {
+    if (e.target.classList.contains('.icon-close')) {
+      let productoEliminar = e.target.parentElement;
+      let titulo = productoEliminar.querySelector('p').textContent;
+  
+      allProducts = allProducts.filter(
+        producto => producto.titulo !== titulo);
+  console.log(allProducts)
+      carritoFuncional();
+    }
+  });
+
+  function carritoFuncional() {
+    if(!allProducts.length){
+        cartEmpty.classList.remove('hidden');
+		rowProduct.classList.add('hidden');
+		cartTotal.classList.add('hidden');
+    } else {
+		cartEmpty.classList.add('hidden');
+		rowProduct.classList.remove('hidden');
+		cartTotal.classList.remove('hidden');
+	}
+    carrito()
+}
 
 // Función para mostrar el carrito
 function carrito() {
-  let listaCarrito = "";
+    let listaCarrito = "";
   for (let i = 0; i < allProducts.length; i++) {
     listaCarrito += `
     <div class="cardCarrito">
       <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
       <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
       <span class="precio-producto-carrito">${allProducts[i].precio}</span>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close close">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
     </div>
     `;
   }
@@ -641,8 +732,6 @@ function carrito() {
 
   sumarTotal();
 }
-
-
 
 // Función para sumar el total a pagar
 function sumarTotal() {
@@ -658,27 +747,14 @@ function sumarTotal() {
     <h3>Total:</h3>
     <span class="total-pagar">$${totalPagar}</span>
   `;
-  let valorTotal = `$`;
+  let valorTotal
+  valorTotal == `$${totalPagar}`; 
 
   document.getElementById("contador-productos").innerHTML = `
     <span>${totalProductos}</span>
   `;
   contadorProductos += totalProductos;
 }
-
-let eliminarProducto = document.getElementsByClassName("icon-close")
-eliminarProducto.addEventListener("click", function(e){
-    if (e.target.classList.contains('icon-close')) {
-		const product = e.target.parentElement;
-		const title = product.querySelector('p').textContent;
-
-		allProducts = allProducts.filter(
-			product => product.title !== title
-		);
-
-		console.log(allProducts);
-	}
-});
 
 
 busquedaSearch.addEventListener("keyup", function (e) {
