@@ -48,6 +48,10 @@ section h1{
     margin: 20px;
 }
 
+.search{
+    display: flex !important;
+}
+
 .cards {
     display: flex;
     flex-direction: row;
