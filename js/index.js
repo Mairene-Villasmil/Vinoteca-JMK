@@ -88,21 +88,15 @@ let cartTotal = document.querySelector(".cart-total")
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const links = document.querySelectorAll(".nav-links li");
-
 hamburger.addEventListener('click', ()=>{
-   //Animate Links
     navLinks.classList.toggle("open");
     links.forEach(link => {
         link.classList.toggle("fade");
     });
-
-    //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
-
 let modalLogin = document.getElementById("loginIcono")
 modalLogin.addEventListener("click", function (e) {
-
     let modalLogin = document.getElementById("modalLogin");
     modalLogin.style.display = "flex";
     e.preventDefault();
@@ -112,7 +106,6 @@ modalLogin.addEventListener("click", function (e) {
         location.reload()
     });
 });
-
 
 var botonesNav = document.getElementsByClassName("nav-link")
 for (var i = 0; i < botonesNav.length; i++) {

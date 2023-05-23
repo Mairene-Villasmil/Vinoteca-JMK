@@ -115,6 +115,11 @@ button:hover{
 }
 
 @media screen and (max-width: 689px) {
+    .ditailsContainer{
+        width: 90%;
+        height: 90%;
+    }
+
     .detallesDos{
         flex-direction: column;
         justify-content: space-between;
@@ -164,7 +169,7 @@ button:hover{
     
     .lista-detalles li{
         font-size: 10px;
-        line-height: 18px;
+        line-height: 15px;
         padding: 0px 10px;
     }
     
