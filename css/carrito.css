@@ -119,7 +119,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin-top: 40px;
+}
+
+.btn-eliminar:hover{
+    background-color: transparent !important;
+}
+
+.totalSocio{
+    margin-bottom: 40px;
 }
 
 .carritoDos {
@@ -164,7 +171,7 @@ input[type=password] {
     border-style: none none solid;
     border-image: initial;
     border-bottom: 1px solid rgb(221, 221, 221);
-    margin-left: 50px;
+    text-align: center;
 }
 
 .subtotal {
@@ -229,6 +236,13 @@ button:hover {
     font-weight: bold;
     text-align: right;
     margin-right: 10px;
+}
+
+.selector-cantidad{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .close:hover,

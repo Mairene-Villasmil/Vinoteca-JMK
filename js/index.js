@@ -362,10 +362,11 @@ function mostrarPage(id) {
                         </div>
 					</div>
                 </div>
-                    <div class="cart-total" id="totalDelCarrito">
-                        
-                    </div>
-                    <p class="cart-empty"> El carrito esta Vacio</p>
+                <div class="cart-total" id="totalDelCarrito">
+                <h3>Total:</h3>
+                <span class="total-pagar">$0</span>
+                <span id="descuentoAplicado" style="display: none;">Descuento aplicado</span>
+            </div>
 				</div>
                         <div class="eresSocio" id="eresSocio">
                             <label class="codigoDescuento">¿Eres Socio? Ingresa tu código de descuento</label>
@@ -378,6 +379,7 @@ function mostrarPage(id) {
             </div>
             <div class="carritoDos">
                     <div class="pagar">
+                    <h2 class="totalSocio">Total a Pagar: $</h2>
                         <div class="total">
                             <div id="totalDescuento">
                             </div>
@@ -609,8 +611,7 @@ function detalle(id) {
 
 let allProducts = [];
 let titulo // Array para almacenar los productos del carrito
-let showHTML
-// Evento click en pagInicio
+
 pagInicio.addEventListener("click", e => {
   if (e.target.classList.contains("add-cart")) {
     let producto = e.target.parentElement;
@@ -639,52 +640,45 @@ pagInicio.addEventListener("click", e => {
 });
 
 
-// let eliminarProducto = document.querySelector(".close")
-// // rowProduct esta declarada en la global
-// rowProduct.addEventListener('click', e => {
-//     if (e.target.classList.contains('.icon-close')) {
-//       let productoEliminar = e.target.parentElement;
-//       let titulo = productoEliminar.querySelector('p').textContent;
-  
-//       allProducts = allProducts.filter(
-//         producto => producto.titulo !== titulo);
-//   console.log(allProducts)
-//       carritoFuncional();
-//     }
-//   });
-
-//   function carritoFuncional() {
-//     if(!allProducts.length){
-//         cartEmpty.classList.remove('hidden');
-// 		rowProduct.classList.add('hidden');
-// 		cartTotal.classList.add('hidden');
-//     } else {
-// 		cartEmpty.classList.add('hidden');
-// 		rowProduct.classList.remove('hidden');
-// 		cartTotal.classList.remove('hidden');
-// 	}
-//     carrito()
-// }
-
 // Función para mostrar el carrito
 function carrito() {
     let listaCarrito = "";
-  for (let i = 0; i < allProducts.length; i++) {
-    listaCarrito += `
-    <div class="cardCarrito">
-      <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
-      <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
-      <span class="precio-producto-carrito">${allProducts[i].precio}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close close">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </div>
-    `;
+    for (let i = 0; i < allProducts.length; i++) {
+      listaCarrito += `
+        <div class="cardCarrito">
+          <span class="cantidad-producto-carrito">${allProducts[i].cantidad}</span>
+          <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
+          <span class="precio-producto-carrito">${allProducts[i].precio}</span>
+          <div class="selector-cantidad">
+            <i class="fa-solid fa-minus restar-cantidad" onclick="restarCantidad(${i})"></i>
+            <input type="text" value="${allProducts[i].cantidad}" class="carrito-item-cantidad" disabled>
+            <i class="fa-solid fa-plus sumar-cantidad" onclick="sumarCantidad(${i})"></i>
+          </div>
+          <button class="btn-eliminar" onclick="eliminarProducto(${i})"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      `;
+    }
+    document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
+  
+    sumarTotal();
   }
-  document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-
-  sumarTotal();
-}
+  
+  function sumarCantidad(index) {
+    allProducts[index].cantidad++;
+    carrito();
+  }
+  
+  function restarCantidad(index) {
+    if (allProducts[index].cantidad > 1) {
+      allProducts[index].cantidad--;
+      carrito();
+    }
+  }
+  
+  function eliminarProducto(index) {
+    allProducts.splice(index, 1);
+    carrito();
+  }
 
 // Función para sumar el total a pagar
 function sumarTotal() {
@@ -780,8 +774,8 @@ function filtrosCombinados() {
     filtrado.length > 0
         ? display(filtrado)
         : (pagInicio.innerHTML = `
-          <div class="ceroResultado">
-            <h1 class="sinEventos">No se encontró el producto buscado...</h1>
+          <div "ceroResultado"> 
+          <img src="./imagenes/sinStock.png" alt="sinStock">
           </div>
         `);
 }
