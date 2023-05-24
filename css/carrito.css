@@ -138,6 +138,11 @@
     align-items: center;
 }
 
+.fa-plus,
+.fa-minus{
+    cursor: pointer;
+}
+
 .total h1 {
     margin: 40px 0px 10px;
     text-align: center;

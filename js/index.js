@@ -80,6 +80,7 @@ let rowProduct = document.querySelector(".row-product")
 let carritoCompras = document.getElementById("carritoCompras")
 let valorTotal = document.querySelector(".total-pagar")
 let busquedaSearch = document.getElementById("inputSearch")
+let searchContainer = document.getElementById("search")
 let contadorProductos = document.getElementById("contador-arrayProductos")
 //let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
 //let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
@@ -112,7 +113,6 @@ for (var i = 0; i < botonesNav.length; i++) {
     const elementos = botonesNav[i]
     elementos.addEventListener("click", function (e) {
         mostrarPage(e.target.id)
-        console.log(e.target.id)
     })
 }
 
@@ -127,7 +127,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
@@ -174,7 +174,8 @@ function mostrarPage(id) {
             arrayFiltro = vinos
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
-            busquedaSearch.style.display = "flex"
+            searchContainer.style.display = "flex"
+            busquedaSearch.value =""
             pagInicio.style.display = "flex"
             display(vinos)
             arrayProductosVinoteca(vinos)
@@ -191,7 +192,8 @@ function mostrarPage(id) {
             arrayFiltro = whisky
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
-            busquedaSearch.style.display = "flex"
+            searchContainer.style.display = "flex"
+            busquedaSearch.value =""
             pagInicio.style.display = "flex"
             display(whisky)
             arrayProductosVinoteca(whisky)
@@ -208,7 +210,8 @@ function mostrarPage(id) {
             arrayFiltro = cerveza
             checkedCheckboxes = []
             categoriasProductos.style.display = "flex"
-            busquedaSearch.style.display = "flex"
+            searchContainer.style.display = "flex"
+            busquedaSearch.value =""
             pagInicio.style.display = "flex"
             display(cerveza)
             arrayProductosVinoteca(cerveza)
@@ -222,7 +225,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             display(giftCard)
@@ -235,7 +238,7 @@ function mostrarPage(id) {
             carruseCerveza.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             carruselEvento.style.display = "flex"
             pagInicio.style.display = "flex"
@@ -249,7 +252,7 @@ function mostrarPage(id) {
             carruseCerveza.style.display = "none"
             carruselEvento.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             carruselRecorridos.style.display = "flex"
             pagInicio.style.display = "flex"
@@ -264,7 +267,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
@@ -335,7 +338,6 @@ function mostrarPage(id) {
             for (var i = 0; i < lugares.length; i++) {
                 lugares[i].addEventListener("click", function (e) {
                     displayMapa(e.target.innerHTML)
-                    console.log(e.target.innerHTML)
                 })
             }
             break;
@@ -348,7 +350,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             pagInicio.style.display = "none"
             carritoCompras.style.display = "flex"
             carritoCompras.innerHTML =
@@ -434,7 +436,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             pagInicio.innerHTML = `
@@ -536,7 +538,7 @@ function mostrarPage(id) {
             carruselEvento.style.display = "none"
             carruselRecorridos.style.display = "none"
             categoriasProductos.style.display = "none"
-            busquedaSearch.style.display = "none"
+            searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
             display(oferta)
@@ -650,9 +652,9 @@ function carrito() {
           <p class="titulo-producto-carrito">${allProducts[i].titulo}</p>
           <span class="precio-producto-carrito">${allProducts[i].precio}</span>
           <div class="selector-cantidad">
-            <i class="fa-solid fa-minus restar-cantidad" onclick="restarCantidad(${i})"></i>
-            <input type="text" value="${allProducts[i].cantidad}" class="carrito-item-cantidad" disabled>
             <i class="fa-solid fa-plus sumar-cantidad" onclick="sumarCantidad(${i})"></i>
+            <input type="text" value="${allProducts[i].cantidad}" class="carrito-item-cantidad" disabled>
+            <i class="fa-solid fa-minus restar-cantidad" onclick="restarCantidad(${i})"></i>
           </div>
           <button class="btn-eliminar" onclick="eliminarProducto(${i})"><i class="fa-solid fa-trash"></i></button>
         </div>
@@ -704,7 +706,7 @@ function sumarTotal() {
 }
 
 
-busquedaSearch.addEventListener("keyup", function (e) {
+searchContainer.addEventListener("keyup", function (e) {
     var datoInput = e.target.value
     buscar = datoInput.trim().toLowerCase()
     filtrosCombinados()

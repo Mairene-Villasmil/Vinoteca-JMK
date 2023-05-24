@@ -48,17 +48,18 @@
 }
 
 .img-product{
-    width: 100%;
-    height: 80%;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: rgba(0, 0, 0, 0.781) solid 8px;
+    border-radius: 10px;
 }
 
 .img-product img{
-    width: 300px;
+    width: 280px;
     height: 350px;
-    border: black solid 2px;
 }
 
 .t-detalle{
