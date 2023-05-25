@@ -408,7 +408,13 @@ button:hover {
 
     .modal-contentSocio {
         margin-top: 50%;
-        height: 45%;
+        width: 95%;
+        height: 15%;
+    }
+
+    .modal-contentSocio p{
+        font-size: 18px;
+        line-height: 30px;
     }
 
 }

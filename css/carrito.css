@@ -269,8 +269,7 @@ button:hover {
     input[type="text"],
     input[type="tel"],
     input[type="documento"],
-    textarea,
-    input[type=password] {
+    textarea{
         margin-left: 5px;
         font-size: 14px;
     }
@@ -286,7 +285,7 @@ button:hover {
 
     .descuentoSocio,
     .codigoDescuento{
-        text-align: right;
+        text-align: left;
     }
 
     .titulo-producto-carrito,
@@ -295,8 +294,26 @@ button:hover {
         font-size: 16px;
     }
 
+    .eresSocio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     .cart-total span{
-        font-size: 20px;
+        font-size: 25px;
+    }
+
+    .total{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .totalSocio{
+        text-align: center;
     }
 
     .total h1 {
@@ -311,8 +328,6 @@ button:hover {
 
     input[type="email"],
     input[type="number"]{
-        width: 180px;
-        margin-left: 110px;
         font-size: 14px;
     }
 

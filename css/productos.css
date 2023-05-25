@@ -139,8 +139,7 @@ section h1{
         width: 100vw;
     }
 
-    .ceroResultado img{
-        width: 80%;
-        height: 30vh;
+    img{
+        width: 100%;
     }
 }

@@ -222,11 +222,11 @@ input[type="checkbox"] {
     }
 
     .modal-contentLogin {
-        margin-top: 30%;
-        margin-left: 20%;
+        margin-top: 10%;
+        margin-left: 15%;
         padding-bottom: 0px;
-        width: 60%;
-        height: 45%;
+        width: 75%;
+        height: 30%;
         padding: 0px;
     }
 
