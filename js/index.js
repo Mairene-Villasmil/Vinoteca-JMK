@@ -377,7 +377,7 @@ function mostrarPage(id) {
             </div>
             <div class="carritoDos">
                     <div class="pagar">
-                    <h2 class="totalSocio" id="totalSocio">Total a Pagar: $</h2>
+                    <h2 class="totalSocio" id="totalSocio">Total a Pagar: $0</h2>
                         <div class="total">
                             <div id="totalDescuento">
                             </div>
@@ -611,8 +611,6 @@ function detalle(id) {
 }
 
 
-
-
 let titulo // Array para almacenar los productos del carrito
 
 pagInicio.addEventListener("click", e => {
@@ -669,25 +667,24 @@ function carrito() {
       `;
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
-  
+
     let codigoSocio = document.getElementById("codigoSocio")
     let totalAPagar = document.getElementById("totalSocio")
     let valor = sumarTotal();
-    codigoSocio.style.border = "3px solid red"
+            codigoSocio.style.border = "3px solid red"
             totalAPagar.innerHTML = `
-            Total a Pagar: $${valor}
+            Total a pagar: $${valor}
             `
     codigoSocio.addEventListener("keyup", function(e){
-        console.log(e.target.value.length)
         if(e.target.value.length == 10){
             codigoSocio.style.border = "3px solid green"
             totalAPagar.innerHTML = `
-            Total a Pagar: $${valor * 0.85}
+            Total a pagar: $${valor * 0.85}
             `
         }else{
             codigoSocio.style.border = "3px solid red"
             totalAPagar.innerHTML = `
-            Total a Pagar: $${valor}
+            Total a pagar: $${valor}
             `
         }
     })
