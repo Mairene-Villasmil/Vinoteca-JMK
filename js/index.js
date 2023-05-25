@@ -82,9 +82,11 @@ let valorTotal = document.querySelector(".total-pagar")
 let busquedaSearch = document.getElementById("inputSearch")
 let searchContainer = document.getElementById("search")
 let contadorProductos = document.getElementById("contador-arrayProductos")
+let allProducts = [];
 //let codigoSocio = document.getElementById("totalDescuento") //es para poner el valor final a pagar
 //let eresSocio = document.getElementById("eresSocio") //es el contenedor completo
 let cartEmpty = document.querySelector(".cart-empty")
+
 let cartTotal = document.querySelector(".cart-total")
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
@@ -381,7 +383,7 @@ function mostrarPage(id) {
             </div>
             <div class="carritoDos">
                     <div class="pagar">
-                    <h2 class="totalSocio">Total a Pagar: $</h2>
+                    <h2 class="totalSocio" id="totalSocio">Total a Pagar: $</h2>
                         <div class="total">
                             <div id="totalDescuento">
                             </div>
@@ -541,6 +543,9 @@ function mostrarPage(id) {
             searchContainer.style.display = "none"
             carritoCompras.style.display = "none"
             pagInicio.style.display = "flex"
+            document.getElementById("contador-productos").innerHTML = `
+            <span>${allProducts.length}</span>
+            `;
             display(oferta)
     }
 
@@ -611,7 +616,9 @@ function detalle(id) {
     })
 }
 
-let allProducts = [];
+
+
+
 let titulo // Array para almacenar los productos del carrito
 
 pagInicio.addEventListener("click", e => {
@@ -639,6 +646,13 @@ pagInicio.addEventListener("click", e => {
     }
 }
 
+// Función para sumar el total a pagar
+  
+    document.getElementById("contador-productos").innerHTML = `
+      <span>${allProducts.length}</span>
+    `;
+    
+
 });
 
 
@@ -662,7 +676,27 @@ function carrito() {
     }
     document.getElementById("contenedorCarrito").innerHTML = listaCarrito;
   
-    sumarTotal();
+    let codigoSocio = document.getElementById("codigoSocio")
+    let totalAPagar = document.getElementById("totalSocio")
+    let valor = sumarTotal();
+    codigoSocio.style.border = "3px solid red"
+            totalAPagar.innerHTML = `
+            Total a Pagar: $${valor}
+            `
+    codigoSocio.addEventListener("keyup", function(e){
+        console.log(e.target.value.length)
+        if(e.target.value.length == 10){
+            codigoSocio.style.border = "3px solid green"
+            totalAPagar.innerHTML = `
+            Total a Pagar: $${valor * 0.85}
+            `
+        }else{
+            codigoSocio.style.border = "3px solid red"
+            totalAPagar.innerHTML = `
+            Total a Pagar: $${valor}
+            `
+        }
+    })
   }
   
   function sumarCantidad(index) {
@@ -703,7 +737,11 @@ function sumarTotal() {
     <span>${totalProductos}</span>
   `;
   contadorProductos += totalProductos;
+
+  return totalPagar
 }
+
+
 
 
 searchContainer.addEventListener("keyup", function (e) {
