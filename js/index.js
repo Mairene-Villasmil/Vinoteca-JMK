@@ -388,8 +388,8 @@ function mostrarPage(id) {
                         <div class="datosTDC" id="datosTDC">
                             <form class="form" id="datosCarrito">
                             <img src="#" alt="">
-                            <label for="nombre"></label>
-                            <input type="text" name="nombre" placeholder="0000-0000-0000-0000" required>
+                            <label for="number"></label>
+                            <input type="number" name="nombre" placeholder="0000-0000-0000-0000" required>
                             <label for="nombre"></label>
                             <input type="text" name="nombre" placeholder="Nombre" required>
                             <label for="date"></label>
